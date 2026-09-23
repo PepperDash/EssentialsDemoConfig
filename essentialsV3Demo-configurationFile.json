@@ -1,0 +1,204 @@
+{
+    "info": {
+        "name": "Essentials Demo",
+        "comment": "Public demo/example program for Essentials v3. Every device is mocked - nothing here talks to real AV hardware, so it runs standalone on any 4-series processor.",
+        "type": "essentialsDemo",
+        "version": "1.0.0"
+    },
+    "devices": [
+        {
+            "key": "display-1",
+            "uid": 1,
+            "name": "Display 1",
+            "type": "mockdisplay",
+            "group": "display",
+            "properties": {}
+        },
+        {
+            "key": "display-2",
+            "uid": 2,
+            "name": "Display 2",
+            "type": "mockdisplay",
+            "group": "display",
+            "properties": {}
+        },
+        {
+            "key": "source-laptop",
+            "uid": 3,
+            "name": "Laptop",
+            "type": "genericsource",
+            "group": "source",
+            "properties": {}
+        },
+        {
+            "key": "source-wireless",
+            "uid": 4,
+            "name": "Wireless Presentation",
+            "type": "genericsource",
+            "group": "source",
+            "properties": {}
+        },
+        {
+            "key": "source-media",
+            "uid": 5,
+            "name": "Media Player",
+            "type": "genericsource",
+            "group": "source",
+            "properties": {}
+        },
+        {
+            "key": "source-cable",
+            "uid": 6,
+            "name": "Cable TV",
+            "type": "genericsource",
+            "group": "source",
+            "properties": {}
+        },
+        {
+            "key": "audio-room",
+            "uid": 7,
+            "name": "Room Volume",
+            "type": "mockaudiodevice",
+            "group": "audio",
+            "properties": {}
+        },
+        {
+            "key": "lighting-1",
+            "uid": 8,
+            "name": "Room Lighting",
+            "type": "mockLightingDevice",
+            "group": "lighting",
+            "properties": {
+                "defaultSceneId": "on",
+                "scenes": [
+                    { "id": "off", "name": "Off" },
+                    { "id": "dim", "name": "Dim" },
+                    { "id": "on", "name": "On" },
+                    { "id": "presentation", "name": "Presentation" }
+                ]
+            }
+        }
+    ],
+    "sourceLists": {
+        "default": {
+            "laptop": {
+                "sourceKey": "source-laptop",
+                "name": "Laptop",
+                "icon": "Laptop",
+                "order": 1,
+                "includeInSourceList": true,
+                "type": "route",
+                "routeList": [
+                    { "sourceKey": "source-laptop", "destinationKey": "display1", "type": "audioVideo" },
+                    { "sourceKey": "source-laptop", "destinationKey": "display2", "type": "audioVideo" }
+                ]
+            },
+            "wireless": {
+                "sourceKey": "source-wireless",
+                "name": "Wireless Presentation",
+                "icon": "Laptop",
+                "order": 2,
+                "includeInSourceList": true,
+                "type": "route",
+                "routeList": [
+                    { "sourceKey": "source-wireless", "destinationKey": "display1", "type": "audioVideo" },
+                    { "sourceKey": "source-wireless", "destinationKey": "display2", "type": "audioVideo" }
+                ]
+            },
+            "media": {
+                "sourceKey": "source-media",
+                "name": "Media Player",
+                "icon": "Media",
+                "order": 3,
+                "includeInSourceList": true,
+                "type": "route",
+                "routeList": [
+                    { "sourceKey": "source-media", "destinationKey": "display1", "type": "audioVideo" },
+                    { "sourceKey": "source-media", "destinationKey": "display2", "type": "audioVideo" }
+                ]
+            },
+            "cable": {
+                "sourceKey": "source-cable",
+                "name": "Cable TV",
+                "icon": "Cable",
+                "order": 4,
+                "includeInSourceList": true,
+                "type": "route",
+                "routeList": [
+                    { "sourceKey": "source-cable", "destinationKey": "display1", "type": "audioVideo" },
+                    { "sourceKey": "source-cable", "destinationKey": "display2", "type": "audioVideo" }
+                ]
+            },
+            "roomOff": {
+                "sourceKey": "$off",
+                "name": "Off",
+                "order": 99,
+                "includeInSourceList": false,
+                "type": "off",
+                "routeList": [
+                    { "sourceKey": "$off", "destinationKey": "display1", "type": "audioVideo" },
+                    { "sourceKey": "$off", "destinationKey": "display2", "type": "audioVideo" }
+                ]
+            }
+        }
+    },
+    "destinationLists": {
+        "default": {
+            "display1": {
+                "sinkKey": "display-1",
+                "name": "Display 1",
+                "order": 1,
+                "sinkType": "audioVideo",
+                "includeInDestinationList": true,
+                "isProgramAudioDestination": true
+            },
+            "display2": {
+                "sinkKey": "display-2",
+                "name": "Display 2",
+                "order": 2,
+                "sinkType": "audioVideo",
+                "includeInDestinationList": true,
+                "isProgramAudioDestination": false
+            }
+        }
+    },
+    "audioControlPointLists": {
+        "default": {
+            "levelControls": {
+                "roomVolume": {
+                    "parentDeviceKey": "audio-room",
+                    "name": "Room Volume",
+                    "includeInUserList": true,
+                    "order": 1,
+                    "type": "level"
+                }
+            }
+        }
+    },
+    "rooms": [
+        {
+            "key": "room1",
+            "uid": 100,
+            "name": "Demo Room",
+            "type": "essentialsDemoRoom",
+            "properties": {
+                "description": "A simple two-display room with a few sources, lighting scene control, audio level control, and a tech menu for system status.",
+                "sourceListKey": "default",
+                "destinationListKey": "default",
+                "audioControlPointListKey": "default",
+                "defaultAudioKey": "audio-room",
+                "defaultSourceItem": "laptop",
+                "defaultDisplayKey": "display1",
+                "enableAudioFollowsVideo": true,
+                "shutdownPromptSeconds": 30,
+                "environment": {
+                    "enabled": true,
+                    "deviceKeys": ["lighting-1"]
+                },
+                "tech": {
+                    "password": "1234"
+                }
+            }
+        }
+    ]
+}
