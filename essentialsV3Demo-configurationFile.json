@@ -198,17 +198,15 @@
       "type": "mockmidpoint",
       "properties": {
         "inputPorts": [
-          { "name": "Laptop", "signalType": "AudioVideo", "txDeviceKey": "source-laptop" },
-          { "name": "Wireless Presentation", "signalType": "AudioVideo" },
-          { "name": "Media Player", "signalType": "AudioVideo" },
-          { "name": "Cable TV", "signalType": "AudioVideo" },
-          { "name": "Wireless Mic", "signalType": "Audio" },
-          { "name": "Lectern Mic", "signalType": "Audio" }
+          { "name": "source-laptop", "label": "Laptop", "signalType": "AudioVideo", "txDeviceKey": "source-laptop" },
+          { "name": "source-wireless", "label": "Wireless Presentation", "signalType": "AudioVideo" },
+          { "name": "source-media", "label": "Media Player", "signalType": "AudioVideo" },
+          { "name": "source-cable", "label": "Cable TV", "signalType": "AudioVideo" }
         ],
         "outputPorts": [
-          { "name": "Left Display", "signalType": "AudioVideo" },
-          { "name": "Right Display", "signalType": "AudioVideo" },
-          { "name": "Room Speakers", "signalType": "Audio" }
+          { "name": "display-1", "label": "Left Display", "signalType": "AudioVideo" },
+          { "name": "display-2", "label": "Right Display", "signalType": "AudioVideo" },
+          { "name": "programAudio", "label": "Program Audio", "signalType": "Audio" }
         ]
       }
     },
@@ -239,7 +237,8 @@
         "defaultRoomKey": "room1",
         "useDirectServer": true,
         "theme": "dark",
-        "buttonToolbarTimeoutInS": 30
+        "buttonToolbarTimeoutInS": 30,
+        "developmentServerAddress": "http://192.168.1.181:5174"
       }
     }
   ],
