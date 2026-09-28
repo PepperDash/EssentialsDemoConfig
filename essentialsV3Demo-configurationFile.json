@@ -23,13 +23,13 @@
     },
     {
       "key": "display-1",
-      "name": "Display 1",
+      "name": "Left Display",
       "type": "mockdisplay",
       "properties": {}
     },
     {
       "key": "display-2",
-      "name": "Display 2",
+      "name": "Right Display",
       "type": "mockdisplay",
       "properties": {}
     },
@@ -191,6 +191,56 @@
         "startingTemperatureF": 78.0,
         "startingHumidityPercent": 10
       }
+    },
+    {
+      "key": "matrix-router",
+      "name": "Matrix Router",
+      "type": "mockmidpoint",
+      "properties": {
+        "inputPorts": [
+          { "name": "Laptop", "signalType": "AudioVideo", "txDeviceKey": "source-laptop" },
+          { "name": "Wireless Presentation", "signalType": "AudioVideo" },
+          { "name": "Media Player", "signalType": "AudioVideo" },
+          { "name": "Cable TV", "signalType": "AudioVideo" },
+          { "name": "Wireless Mic", "signalType": "Audio" },
+          { "name": "Lectern Mic", "signalType": "Audio" }
+        ],
+        "outputPorts": [
+          { "name": "Left Display", "signalType": "AudioVideo" },
+          { "name": "Right Display", "signalType": "AudioVideo" },
+          { "name": "Room Speakers", "signalType": "Audio" }
+        ]
+      }
+    },
+        {
+      "name": "Test Panel",
+      "key": "browser",
+      "type": "mcxpanel",
+      "properties": {
+        "control": {
+          "ipid": "05",
+          "method": "ipid"
+        },
+        "defaultRoomKey": "room1",
+        "useDirectServer": true,
+        "theme": "dark",
+        "buttonToolbarTimeoutInS": 30
+      }
+    },
+    {
+      "name": "Test TSW",
+      "key": "tsw1070",
+      "type": "mctsw1070",
+      "properties": {
+        "control": {
+          "ipid": "04",
+          "method": "ipid"
+        },
+        "defaultRoomKey": "room1",
+        "useDirectServer": true,
+        "theme": "dark",
+        "buttonToolbarTimeoutInS": 30
+      }
     }
   ],
   "sourceLists": {
@@ -304,7 +354,7 @@
     "default": {
       "display1": {
         "sinkKey": "display-1",
-        "name": "Display 1",
+        "name": "Left Display",
         "order": 1,
         "sinkType": "audioVideo",
         "includeInDestinationList": true,
@@ -312,7 +362,7 @@
       },
       "display2": {
         "sinkKey": "display-2",
-        "name": "Display 2",
+        "name": "Right Display",
         "order": 2,
         "sinkType": "audioVideo",
         "includeInDestinationList": true,
@@ -390,7 +440,9 @@
             "infra-power-sequencer",
             "infra-ir-repeater"
           ],
-          "rackSensorDeviceKey": "infra-rack-sensor"
+          "rackSensorDeviceKey": "infra-rack-sensor",
+          "displays": [{ "deviceKey": "display-1" }, { "deviceKey": "display-2" }],
+          "routingDeviceKey": "matrix-router"
         }
       }
     }
