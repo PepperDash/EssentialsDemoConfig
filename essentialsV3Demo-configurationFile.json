@@ -398,6 +398,14 @@
       }
     }
   },
+  "tieLines": [
+    { "SourceKey": "source-laptop", "SourcePort": "anyOut", "DestinationKey": "matrix-router", "DestinationPort": "source-laptop" },
+    { "SourceKey": "source-wireless", "SourcePort": "anyOut", "DestinationKey": "matrix-router", "DestinationPort": "source-wireless" },
+    { "SourceKey": "source-media", "SourcePort": "anyOut", "DestinationKey": "matrix-router", "DestinationPort": "source-media" },
+    { "SourceKey": "source-cable", "SourcePort": "anyOut", "DestinationKey": "matrix-router", "DestinationPort": "source-cable" },
+    { "SourceKey": "matrix-router", "SourcePort": "display-1", "DestinationKey": "display-1", "DestinationPort": "hdmiIn1" },
+    { "SourceKey": "matrix-router", "SourcePort": "display-2", "DestinationKey": "display-2", "DestinationPort": "hdmiIn1" }
+  ],
   "rooms": [
     {
       "key": "room1",
