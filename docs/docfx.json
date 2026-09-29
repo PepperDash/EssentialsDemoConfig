@@ -1,0 +1,37 @@
+{
+  "$schema": "https://raw.githubusercontent.com/dotnet/docfx/main/schemas/docfx.schema.json",
+  "build": {
+    "content": [
+      {
+        "files": [
+          "**/*.{md,yml}"
+        ],
+        "exclude": [
+          "_site/**"
+        ]
+      }
+    ],
+    "resource": [
+      {
+        "files": [
+          "images/**"
+        ]
+      }
+    ],
+    "output": "_site",
+    "template": [
+      "default",
+      "modern"
+    ],
+    "globalMetadata": {
+      "_appName": "Essentials Demo",
+      "_appTitle": "Essentials Demo",
+      "_enableSearch": true,
+      "_appLogoPath": "images/favicon-32x32.png",
+      "_appFaviconPath": "images/favicon.ico",
+      "_disableToc": false,
+      "_enableNewTab": true,
+      "pdf": false
+    }
+  }
+}

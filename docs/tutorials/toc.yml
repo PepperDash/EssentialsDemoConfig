@@ -1,0 +1,10 @@
+- name: Tutorials
+  href: index.md
+- name: 1. Run the demo
+  href: 01-run-the-demo.md
+- name: 2. Explore the technician pages
+  href: 02-explore-tech-pages.md
+- name: 3. Make your first config change
+  href: 03-first-config-change.md
+- name: 4. Add a source without writing code
+  href: 04-add-a-source.md

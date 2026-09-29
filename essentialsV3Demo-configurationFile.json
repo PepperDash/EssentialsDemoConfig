@@ -1,4 +1,8 @@
 {
+  "system_url": "https://portal.cloud.pepperdash.com/app/companies/f83790d1-23ac-4895-b8f6-d56dde2449f2/systems/detail/6e3371f0-96b5-4bc9-a8cc-e667d0345ac5/overview",
+  "template_url": "https://portal.cloud.pepperdash.com/app/companies/f83790d1-23ac-4895-b8f6-d56dde2449f2/system-templates/ffc516f2-111e-4f20-9f33-cc4a08a45450/system-template-versions/detail/b486b906-1a36-4132-8003-0687d1a55070/overview",
+  "systemUuid": "6e3371f0-96b5-4bc9-a8cc-e667d0345ac5",
+  "templateUuid": "b486b906-1a36-4132-8003-0687d1a55070",
   "info": {
     "name": "Essentials Demo",
     "comment": "Public demo/example program for Essentials v3. Every device is mocked - nothing here talks to real AV hardware, so it runs standalone on any 4-series processor.",
@@ -156,7 +160,7 @@
         "useDirectServer": true,
         "theme": "dark",
         "buttonToolbarTimeoutInS": 30,
-        "developmentServerAddress": "http://192.168.1.181:5174"
+        "developmentServerAddress": "192.168.1.181:5175"
       }
     }
   ],

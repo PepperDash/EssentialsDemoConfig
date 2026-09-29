@@ -1,0 +1,4 @@
+- name: Explanation
+  href: index.md
+- name: How the demo fits together
+  href: how-the-demo-fits-together.md

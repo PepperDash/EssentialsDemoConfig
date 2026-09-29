@@ -1,0 +1,18 @@
+- name: How-to guides
+  href: index.md
+- name: Configure the room
+  items:
+  - name: Add or remove a source
+    href: add-a-source.md
+  - name: Add a display
+    href: add-a-display.md
+  - name: Replace a simulated device with a real one
+    href: replace-mock-with-real-device.md
+  - name: Simulate a lost video signal
+    href: simulate-lost-video-signal.md
+- name: Work with the processor
+  items:
+  - name: Inspect and control devices from the console
+    href: inspect-devices-from-console.md
+  - name: Load updates onto the processor
+    href: load-updates.md
