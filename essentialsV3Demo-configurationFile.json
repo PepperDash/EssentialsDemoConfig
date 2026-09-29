@@ -1,204 +1,407 @@
 {
-    "info": {
-        "name": "Essentials Demo",
-        "comment": "Public demo/example program for Essentials v3. Every device is mocked - nothing here talks to real AV hardware, so it runs standalone on any 4-series processor.",
-        "type": "essentialsDemo",
-        "version": "1.0.0"
+  "system_url": "https://portal.cloud.pepperdash.com/app/companies/f83790d1-23ac-4895-b8f6-d56dde2449f2/systems/detail/6e3371f0-96b5-4bc9-a8cc-e667d0345ac5/overview",
+  "template_url": "https://portal.cloud.pepperdash.com/app/companies/f83790d1-23ac-4895-b8f6-d56dde2449f2/system-templates/ffc516f2-111e-4f20-9f33-cc4a08a45450/system-template-versions/detail/b486b906-1a36-4132-8003-0687d1a55070/overview",
+  "systemUuid": "6e3371f0-96b5-4bc9-a8cc-e667d0345ac5",
+  "templateUuid": "b486b906-1a36-4132-8003-0687d1a55070",
+  "info": {
+    "name": "Essentials Demo",
+    "comment": "Public demo/example program for Essentials v3. Every device is mocked - nothing here talks to real AV hardware, so it runs standalone on any 4-series processor.",
+    "type": "essentialsDemo",
+    "version": "1.0.0"
+  },
+  "devices": [
+    {
+      "key": "appServer",
+      "name": "App Server",
+      "type": "appServer",
+      "properties": {
+        "serverUrl": "",
+        "directServer": {
+          "enableDirectServer": true,
+          "port": 50002,
+          "automaticallyForwardPortToCSLAN": true
+        },
+        "enableApiServer": false,
+        "enableMessengerSubscriptions": true
+      }
     },
-    "devices": [
-        {
-            "key": "display-1",
-            "uid": 1,
-            "name": "Display 1",
-            "type": "mockdisplay",
-            "group": "display",
-            "properties": {}
-        },
-        {
-            "key": "display-2",
-            "uid": 2,
-            "name": "Display 2",
-            "type": "mockdisplay",
-            "group": "display",
-            "properties": {}
-        },
-        {
-            "key": "source-laptop",
-            "uid": 3,
-            "name": "Laptop",
-            "type": "genericsource",
-            "group": "source",
-            "properties": {}
-        },
-        {
-            "key": "source-wireless",
-            "uid": 4,
-            "name": "Wireless Presentation",
-            "type": "genericsource",
-            "group": "source",
-            "properties": {}
-        },
-        {
-            "key": "source-media",
-            "uid": 5,
-            "name": "Media Player",
-            "type": "genericsource",
-            "group": "source",
-            "properties": {}
-        },
-        {
-            "key": "source-cable",
-            "uid": 6,
-            "name": "Cable TV",
-            "type": "genericsource",
-            "group": "source",
-            "properties": {}
-        },
-        {
-            "key": "audio-room",
-            "uid": 7,
-            "name": "Room Volume",
-            "type": "mockaudiodevice",
-            "group": "audio",
-            "properties": {}
-        },
-        {
-            "key": "lighting-1",
-            "uid": 8,
-            "name": "Room Lighting",
-            "type": "mockLightingDevice",
-            "group": "lighting",
-            "properties": {
-                "defaultSceneId": "on",
-                "scenes": [
-                    { "id": "off", "name": "Off" },
-                    { "id": "dim", "name": "Dim" },
-                    { "id": "on", "name": "On" },
-                    { "id": "presentation", "name": "Presentation" }
-                ]
-            }
-        }
-    ],
-    "sourceLists": {
-        "default": {
-            "laptop": {
-                "sourceKey": "source-laptop",
-                "name": "Laptop",
-                "icon": "Laptop",
-                "order": 1,
-                "includeInSourceList": true,
-                "type": "route",
-                "routeList": [
-                    { "sourceKey": "source-laptop", "destinationKey": "display1", "type": "audioVideo" },
-                    { "sourceKey": "source-laptop", "destinationKey": "display2", "type": "audioVideo" }
-                ]
-            },
-            "wireless": {
-                "sourceKey": "source-wireless",
-                "name": "Wireless Presentation",
-                "icon": "Laptop",
-                "order": 2,
-                "includeInSourceList": true,
-                "type": "route",
-                "routeList": [
-                    { "sourceKey": "source-wireless", "destinationKey": "display1", "type": "audioVideo" },
-                    { "sourceKey": "source-wireless", "destinationKey": "display2", "type": "audioVideo" }
-                ]
-            },
-            "media": {
-                "sourceKey": "source-media",
-                "name": "Media Player",
-                "icon": "Media",
-                "order": 3,
-                "includeInSourceList": true,
-                "type": "route",
-                "routeList": [
-                    { "sourceKey": "source-media", "destinationKey": "display1", "type": "audioVideo" },
-                    { "sourceKey": "source-media", "destinationKey": "display2", "type": "audioVideo" }
-                ]
-            },
-            "cable": {
-                "sourceKey": "source-cable",
-                "name": "Cable TV",
-                "icon": "Cable",
-                "order": 4,
-                "includeInSourceList": true,
-                "type": "route",
-                "routeList": [
-                    { "sourceKey": "source-cable", "destinationKey": "display1", "type": "audioVideo" },
-                    { "sourceKey": "source-cable", "destinationKey": "display2", "type": "audioVideo" }
-                ]
-            },
-            "roomOff": {
-                "sourceKey": "$off",
-                "name": "Off",
-                "order": 99,
-                "includeInSourceList": false,
-                "type": "off",
-                "routeList": [
-                    { "sourceKey": "$off", "destinationKey": "display1", "type": "audioVideo" },
-                    { "sourceKey": "$off", "destinationKey": "display2", "type": "audioVideo" }
-                ]
-            }
-        }
+    {
+      "key": "display-1",
+      "name": "Left Display",
+      "type": "mockdisplay",
+      "properties": {}
     },
-    "destinationLists": {
-        "default": {
-            "display1": {
-                "sinkKey": "display-1",
-                "name": "Display 1",
-                "order": 1,
-                "sinkType": "audioVideo",
-                "includeInDestinationList": true,
-                "isProgramAudioDestination": true
-            },
-            "display2": {
-                "sinkKey": "display-2",
-                "name": "Display 2",
-                "order": 2,
-                "sinkType": "audioVideo",
-                "includeInDestinationList": true,
-                "isProgramAudioDestination": false
-            }
-        }
+    {
+      "key": "display-2",
+      "name": "Right Display",
+      "type": "mockdisplay",
+      "properties": {}
     },
-    "audioControlPointLists": {
-        "default": {
-            "levelControls": {
-                "roomVolume": {
-                    "parentDeviceKey": "audio-room",
-                    "name": "Room Volume",
-                    "includeInUserList": true,
-                    "order": 1,
-                    "type": "level"
-                }
-            }
-        }
+    {
+      "key": "source-laptop",
+      "name": "Laptop",
+      "type": "mockHdmiSource",
+      "properties": {
+        "startsWithSync": true
+      }
     },
-    "rooms": [
+    {
+      "key": "source-wireless",
+      "name": "Wireless Presentation",
+      "type": "mockHdmiSource",
+      "properties": {}
+    },
+    {
+      "key": "source-media",
+      "name": "Media Player",
+      "type": "mockHdmiSource",
+      "properties": {}
+    },
+    {
+      "key": "source-cable",
+      "name": "Cable TV",
+      "type": "mockHdmiSource",
+      "properties": {}
+    },
+    {
+      "key": "audio-room",
+      "name": "Program Audio",
+      "type": "mockaudiodevice",
+      "properties": {}
+    },
+    {
+      "key": "program-audio",
+      "name": "Program Audio Output",
+      "type": "genericaudiooutwithvolume",
+      "properties": {
+        "volumeDeviceKey": "audio-room"
+      }
+    },
+    {
+      "key": "lighting-1",
+      "name": "Room Lighting",
+      "type": "mockLightingDevice",
+      "properties": {
+        "defaultSceneId": "default",
+        "scenes": [
+          { "id": "allOn", "name": "All On" },
+          { "id": "high", "name": "High" },
+          { "id": "conference", "name": "Conference" },
+          { "id": "default", "name": "Default" },
+          { "id": "low", "name": "Low" },
+          { "id": "allOff", "name": "All Off" }
+        ]
+      }
+    },
+    {
+      "key": "audio-wireless-mic",
+      "name": "Wireless Mic",
+      "type": "mockaudiodevice",
+      "properties": {}
+    },
+    {
+      "key": "audio-lectern-mic",
+      "name": "Lectern Mic",
+      "type": "mockaudiodevice",
+      "properties": {}
+    },
+    {
+      "key": "infra-rack-sensor",
+      "name": "Rack Sensor",
+      "type": "mockRackSensor",
+      "properties": {
+        "startingTemperatureF": 78.0,
+        "startingHumidityPercent": 10
+      }
+    },
+    {
+      "key": "matrix-router",
+      "name": "Matrix Router",
+      "type": "mockmidpoint",
+      "properties": {
+        "inputPorts": [
+          { "name": "source-laptop", "label": "Laptop", "signalType": "AudioVideo", "txDeviceKey": "source-laptop" },
+          { "name": "source-wireless", "label": "Wireless Presentation", "signalType": "AudioVideo", "txDeviceKey": "source-wireless" },
+          { "name": "source-media", "label": "Media Player", "signalType": "AudioVideo", "txDeviceKey": "source-media" },
+          { "name": "source-cable", "label": "Cable TV", "signalType": "AudioVideo", "txDeviceKey": "source-cable" }
+        ],
+        "outputPorts": [
+          { "name": "display-1", "label": "Left Display", "signalType": "AudioVideo" },
+          { "name": "display-2", "label": "Right Display", "signalType": "AudioVideo" },
+          { "name": "programAudio", "label": "Program Audio", "signalType": "Audio" }
+        ]
+      }
+    },
         {
-            "key": "room1",
-            "uid": 100,
-            "name": "Demo Room",
-            "type": "essentialsDemoRoom",
-            "properties": {
-                "description": "A simple two-display room with a few sources, lighting scene control, audio level control, and a tech menu for system status.",
-                "sourceListKey": "default",
-                "destinationListKey": "default",
-                "audioControlPointListKey": "default",
-                "defaultAudioKey": "audio-room",
-                "defaultSourceItem": "laptop",
-                "defaultDisplayKey": "display1",
-                "enableAudioFollowsVideo": true,
-                "shutdownPromptSeconds": 30,
-                "environment": {
-                    "enabled": true,
-                    "deviceKeys": ["lighting-1"]
-                },
-                "tech": {
-                    "password": "1234"
-                }
-            }
+      "name": "Test Panel",
+      "key": "browser",
+      "type": "mcxpanel",
+      "properties": {
+        "control": {
+          "ipid": "05",
+          "method": "ipid"
+        },
+        "defaultRoomKey": "room1",
+        "useDirectServer": true,
+        "theme": "dark",
+        "buttonToolbarTimeoutInS": 30
+      }
+    },
+    {
+      "name": "Test TSW",
+      "key": "tsw1070",
+      "type": "mctsw1070",
+      "properties": {
+        "control": {
+          "ipid": "04",
+          "method": "ipid"
+        },
+        "defaultRoomKey": "room1",
+        "useDirectServer": true,
+        "theme": "dark",
+        "buttonToolbarTimeoutInS": 30,
+        "developmentServerAddress": "192.168.1.181:5175"
+      }
+    }
+  ],
+  "sourceLists": {
+    "default": {
+      "laptop": {
+        "sourceKey": "source-laptop",
+        "name": "Laptop",
+        "icon": "Laptop",
+        "order": 1,
+        "includeInSourceList": true,
+        "isAudioSource": true,
+        "type": "route",
+        "routeList": [
+          {
+            "sourceKey": "source-laptop",
+            "destinationKey": "display1",
+            "type": "audioVideo"
+          },
+          {
+            "sourceKey": "source-laptop",
+            "destinationKey": "display2",
+            "type": "audioVideo"
+          },
+          {
+            "sourceKey": "source-laptop",
+            "destinationKey": "programAudio",
+            "type": "audio"
+          }
+        ]
+      },
+      "wireless": {
+        "sourceKey": "source-wireless",
+        "name": "Wireless Presentation",
+        "icon": "Laptop",
+        "order": 2,
+        "includeInSourceList": true,
+        "isAudioSource": true,
+        "type": "route",
+        "routeList": [
+          {
+            "sourceKey": "source-wireless",
+            "destinationKey": "display1",
+            "type": "audioVideo"
+          },
+          {
+            "sourceKey": "source-wireless",
+            "destinationKey": "display2",
+            "type": "audioVideo"
+          },
+          {
+            "sourceKey": "source-wireless",
+            "destinationKey": "programAudio",
+            "type": "audio"
+          }
+        ]
+      },
+      "media": {
+        "sourceKey": "source-media",
+        "name": "Media Player",
+        "icon": "Media",
+        "order": 3,
+        "includeInSourceList": true,
+        "isAudioSource": true,
+        "type": "route",
+        "routeList": [
+          {
+            "sourceKey": "source-media",
+            "destinationKey": "display1",
+            "type": "audioVideo"
+          },
+          {
+            "sourceKey": "source-media",
+            "destinationKey": "display2",
+            "type": "audioVideo"
+          },
+          {
+            "sourceKey": "source-media",
+            "destinationKey": "programAudio",
+            "type": "audio"
+          }
+        ]
+      },
+      "cable": {
+        "sourceKey": "source-cable",
+        "name": "Cable TV",
+        "icon": "Cable",
+        "order": 4,
+        "includeInSourceList": true,
+        "isAudioSource": true,
+        "type": "route",
+        "routeList": [
+          {
+            "sourceKey": "source-cable",
+            "destinationKey": "display1",
+            "type": "audioVideo"
+          },
+          {
+            "sourceKey": "source-cable",
+            "destinationKey": "display2",
+            "type": "audioVideo"
+          },
+          {
+            "sourceKey": "source-cable",
+            "destinationKey": "programAudio",
+            "type": "audio"
+          }
+        ]
+      },
+      "roomOff": {
+        "sourceKey": "$off",
+        "name": "Off",
+        "order": 99,
+        "includeInSourceList": false,
+        "type": "off",
+        "routeList": [
+          {
+            "sourceKey": "$off",
+            "destinationKey": "display1",
+            "type": "audioVideo"
+          },
+          {
+            "sourceKey": "$off",
+            "destinationKey": "display2",
+            "type": "audioVideo"
+          },
+          {
+            "sourceKey": "$off",
+            "destinationKey": "programAudio",
+            "type": "audio"
+          }
+        ]
+      }
+    }
+  },
+  "destinationLists": {
+    "default": {
+      "display1": {
+        "sinkKey": "display-1",
+        "name": "Left Display",
+        "order": 1,
+        "sinkType": "audioVideo",
+        "includeInDestinationList": true,
+        "isProgramAudioDestination": false
+      },
+      "display2": {
+        "sinkKey": "display-2",
+        "name": "Right Display",
+        "order": 2,
+        "sinkType": "audioVideo",
+        "includeInDestinationList": true,
+        "isProgramAudioDestination": false
+      },
+      "programAudio": {
+        "sinkKey": "program-audio",
+        "name": "Program Audio",
+        "order": 3,
+        "sinkType": "audio",
+        "includeInDestinationList": false,
+        "isProgramAudioDestination": true
+      }
+    }
+  },
+  "audioControlPointLists": {
+    "default": {
+      "levelControls": {
+        "program": {
+          "parentDeviceKey": "display-1",
+          "name": "Program",
+          "includeInUserList": true,
+          "order": 1,
+          "type": "levelAndMute"
+        },
+        "wirelessMic": {
+          "parentDeviceKey": "audio-wireless-mic",
+          "name": "Wireless Mic",
+          "includeInUserList": true,
+          "isMic": true,
+          "order": 2,
+          "type": "levelAndMute"
+        },
+        "lecternMic": {
+          "parentDeviceKey": "audio-lectern-mic",
+          "name": "Lectern Mic",
+          "includeInUserList": true,
+          "isMic": true,
+          "order": 3,
+          "type": "levelAndMute"
         }
-    ]
+      }
+    }
+  },
+  "tieLines": [
+    { "SourceKey": "source-laptop", "SourcePort": "anyOut", "DestinationKey": "matrix-router", "DestinationPort": "source-laptop" },
+    { "SourceKey": "source-wireless", "SourcePort": "anyOut", "DestinationKey": "matrix-router", "DestinationPort": "source-wireless" },
+    { "SourceKey": "source-media", "SourcePort": "anyOut", "DestinationKey": "matrix-router", "DestinationPort": "source-media" },
+    { "SourceKey": "source-cable", "SourcePort": "anyOut", "DestinationKey": "matrix-router", "DestinationPort": "source-cable" },
+    { "SourceKey": "matrix-router", "SourcePort": "display-1", "DestinationKey": "display-1", "DestinationPort": "hdmiIn1", "type": "video" },
+    { "SourceKey": "matrix-router", "SourcePort": "display-2", "DestinationKey": "display-2", "DestinationPort": "hdmiIn1", "type": "video" },
+    { "SourceKey": "matrix-router", "SourcePort": "programAudio", "DestinationKey": "program-audio", "DestinationPort": "anyAudioIn" }
+  ],
+  "rooms": [
+    {
+      "key": "room1",
+      "name": "Demo Room",
+      "type": "essentialsDemoRoom",
+      "properties": {
+        "description": "A simple two-display room with a few sources, lighting scene control, audio level control, and a tech menu for system status.",
+        "sourceListKey": "default",
+        "destinationListKey": "default",
+        "audioControlPointListKey": "default",
+        "defaultAudioKey": "audio-room",
+        "defaultSourceItem": "laptop",
+        "defaultDisplayKey": "display1",
+        "enableAudioFollowsVideo": true,
+        "shutdownPromptSeconds": 30,
+        "help": {
+          "message": "Dial x12345 to reach the Help Desk"
+        },
+        "environment": {
+          "enabled": true,
+          "deviceKeys": ["lighting-1"]
+        },
+        "tech": {
+          "password": "1234",
+          "systemStatusDeviceKeys": [
+            "matrix-router",
+            "display-1",
+            "display-2",
+            "audio-room",
+            "source-laptop",
+            "source-wireless",
+            "source-media",
+            "source-cable",
+            "lighting-1"
+          ],
+          "rackSensorDeviceKey": "infra-rack-sensor",
+          "displays": [{ "deviceKey": "display-1" }, { "deviceKey": "display-2" }],
+          "routingDeviceKey": "matrix-router"
+        }
+      }
+    }
+  ]
 }
