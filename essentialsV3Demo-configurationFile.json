@@ -66,6 +66,14 @@
       "properties": {}
     },
     {
+      "key": "program-audio",
+      "name": "Program Audio",
+      "type": "genericaudiooutwithvolume",
+      "properties": {
+        "volumeDeviceKey": "audio-room"
+      }
+    },
+    {
       "key": "lighting-1",
       "name": "Room Lighting",
       "type": "mockLightingDevice",
@@ -262,6 +270,11 @@
             "sourceKey": "source-laptop",
             "destinationKey": "display2",
             "type": "audioVideo"
+          },
+          {
+            "sourceKey": "source-laptop",
+            "destinationKey": "programAudio",
+            "type": "audio"
           }
         ]
       },
@@ -283,6 +296,11 @@
             "sourceKey": "source-wireless",
             "destinationKey": "display2",
             "type": "audioVideo"
+          },
+          {
+            "sourceKey": "source-wireless",
+            "destinationKey": "programAudio",
+            "type": "audio"
           }
         ]
       },
@@ -304,6 +322,11 @@
             "sourceKey": "source-media",
             "destinationKey": "display2",
             "type": "audioVideo"
+          },
+          {
+            "sourceKey": "source-media",
+            "destinationKey": "programAudio",
+            "type": "audio"
           }
         ]
       },
@@ -325,6 +348,11 @@
             "sourceKey": "source-cable",
             "destinationKey": "display2",
             "type": "audioVideo"
+          },
+          {
+            "sourceKey": "source-cable",
+            "destinationKey": "programAudio",
+            "type": "audio"
           }
         ]
       },
@@ -344,6 +372,11 @@
             "sourceKey": "$off",
             "destinationKey": "display2",
             "type": "audioVideo"
+          },
+          {
+            "sourceKey": "$off",
+            "destinationKey": "programAudio",
+            "type": "audio"
           }
         ]
       }
@@ -357,7 +390,7 @@
         "order": 1,
         "sinkType": "audioVideo",
         "includeInDestinationList": true,
-        "isProgramAudioDestination": true
+        "isProgramAudioDestination": false
       },
       "display2": {
         "sinkKey": "display-2",
@@ -366,6 +399,14 @@
         "sinkType": "audioVideo",
         "includeInDestinationList": true,
         "isProgramAudioDestination": false
+      },
+      "programAudio": {
+        "sinkKey": "program-audio",
+        "name": "Program Audio",
+        "order": 3,
+        "sinkType": "audio",
+        "includeInDestinationList": false,
+        "isProgramAudioDestination": true
       }
     }
   },
@@ -403,8 +444,9 @@
     { "SourceKey": "source-wireless", "SourcePort": "anyOut", "DestinationKey": "matrix-router", "DestinationPort": "source-wireless" },
     { "SourceKey": "source-media", "SourcePort": "anyOut", "DestinationKey": "matrix-router", "DestinationPort": "source-media" },
     { "SourceKey": "source-cable", "SourcePort": "anyOut", "DestinationKey": "matrix-router", "DestinationPort": "source-cable" },
-    { "SourceKey": "matrix-router", "SourcePort": "display-1", "DestinationKey": "display-1", "DestinationPort": "hdmiIn1" },
-    { "SourceKey": "matrix-router", "SourcePort": "display-2", "DestinationKey": "display-2", "DestinationPort": "hdmiIn1" }
+    { "SourceKey": "matrix-router", "SourcePort": "display-1", "DestinationKey": "display-1", "DestinationPort": "hdmiIn1", "type": "video" },
+    { "SourceKey": "matrix-router", "SourcePort": "display-2", "DestinationKey": "display-2", "DestinationPort": "hdmiIn1", "type": "video" },
+    { "SourceKey": "matrix-router", "SourcePort": "programAudio", "DestinationKey": "program-audio", "DestinationPort": "anyAudioIn" }
   ],
   "rooms": [
     {
