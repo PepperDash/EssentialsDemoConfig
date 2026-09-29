@@ -1,0 +1,38 @@
+{
+  "devices": [
+    {
+      "id": "ztso2ygp",
+      "label": "Crestron Processor",
+      "type": "processor",
+      "credential": {
+        "source": "manual"
+      },
+      "mappings": [
+        {
+          "pattern": "*.cpz",
+          "localRoot": "restore",
+          "remoteDir": "/program01",
+          "children": [
+            {
+              "pattern": "*configurationFile.json",
+              "localRoot": "EssentialsDemoConfig",
+              "remoteDir": "/user/program1"
+            },
+            {
+              "pattern": "*.cplz",
+              "localRoot": "restore",
+              "remoteDir": "/user/program1/plugins"
+            },
+            {
+              "pattern": "*react*.zip",
+              "localRoot": "restore",
+              "remoteDir": "/user/program1/mcUserApp"
+            }
+          ],
+          "programSlot": "01"
+        }
+      ]
+    }
+  ],
+  "projectRoot": ".."
+}

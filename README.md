@@ -10,6 +10,7 @@ Start with [Tutorial 1: Run the demo](https://pepperdash.github.io/EssentialsDem
 
 - `essentialsV3Demo-configurationFile.json`: the config file that defines the demo room and its devices.
 - `docs/`: the documentation site ([docfx](https://dotnet.github.io/docfx/)), published to GitHub Pages on each push to `main`.
+- [`docs/media/essentials-3-frameworks-update.pdf`](docs/media/essentials-3-frameworks-update.pdf): overview slides on what's new in Essentials 3.0 and Dev Tools 1.6.
 
 To preview the docs locally:
 

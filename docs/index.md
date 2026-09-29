@@ -25,6 +25,8 @@ Nothing needs to be wired up. Once you've seen it run, you can change it: the ro
 
 **Want to know how it works?** Read [how the demo fits together](explanation/how-the-demo-fits-together.md).
 
+**What's new in Essentials 3.0?** See the [Essentials 3.0 and Dev Tools 1.6 overview slides](media/essentials-3-frameworks-update.pdf) (PDF).
+
 ## What you need
 
 - A Crestron 4-series processor or a VC-4 server you can load programs onto.
