@@ -10,29 +10,40 @@
       "mappings": [
         {
           "pattern": "*.cpz",
-          "localRoot": "restore",
-          "remoteDir": "/program02",
+          "localRoot": "dependencies",
+          "remoteDir": "/program01",
           "children": [
             {
               "pattern": "*configurationFile.json",
               "localRoot": "EssentialsDemoConfig",
-              "remoteDir": "/user/program2"
+              "remoteDir": "/user/program1"
             },
             {
               "pattern": "*.cplz",
-              "localRoot": "restore",
-              "remoteDir": "/user/program2/plugins"
+              "localRoot": "dependencies",
+              "remoteDir": "/user/program1/plugins"
             },
             {
-              "pattern": "*react*.zip",
-              "localRoot": "restore",
-              "remoteDir": "/user/program2/mcUserApp"
+              "pattern": "*demo-app*.zip",
+              "localRoot": "dependencies",
+              "remoteDir": "/user/program1/mcUserApp"
             }
           ],
-          "programSlot": "02"
+          "programSlot": "01"
         }
       ]
     }
   ],
-  "projectRoot": ".."
+  "projectRoot": "..",
+  "bundle": {
+    "types": {
+      "servicesCompiled": true,
+      "servicesSource": false,
+      "asset": false,
+      "essentialsEmbedded": false
+    },
+    "version": "1.0.0",
+    "versionSource": "manual",
+    "suffix": ""
+  }
 }

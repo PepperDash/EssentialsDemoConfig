@@ -1,0 +1,25 @@
+{
+  "directories": {
+    "systemConfigurations": "config-files",
+    "dependencies": "dependencies",
+    "artifacts": "artifacts",
+    "sourceFiles": "source-files"
+  },
+  "solutionId": "1",
+  "solutionName": "EssentialsV3Demo",
+  "solutionVersion": "1.0.0",
+  "releaseAssetFilters": {
+    "packages": [
+      "\\.cpz$",
+      "\\.cplz$",
+      "\\.ch5z$"
+    ],
+    "userInterfaces": [
+      "(react|mobile|frontend|app).*\\.zip$"
+    ]
+  },
+  "coreRepos": {
+    "essentials": "https://github.com/PepperDash/Essentials",
+    "touchpanelWrapperApp": "https://github.com/PepperDash/mobile-control-touchpanel-wrapper-app"
+  }
+}
