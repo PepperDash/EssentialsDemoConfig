@@ -120,19 +120,51 @@
       "type": "mockmidpoint",
       "properties": {
         "inputPorts": [
-          { "name": "source-laptop", "label": "Laptop", "signalType": "AudioVideo", "txDeviceKey": "source-laptop" },
-          { "name": "source-wireless", "label": "Wireless Presentation", "signalType": "AudioVideo", "txDeviceKey": "source-wireless" },
-          { "name": "source-media", "label": "Media Player", "signalType": "AudioVideo", "txDeviceKey": "source-media" },
-          { "name": "source-cable", "label": "Cable TV", "signalType": "AudioVideo", "txDeviceKey": "source-cable" }
+          {
+            "name": "source-laptop",
+            "label": "Laptop",
+            "signalType": "AudioVideo",
+            "txDeviceKey": "source-laptop"
+          },
+          {
+            "name": "source-wireless",
+            "label": "Wireless Presentation",
+            "signalType": "AudioVideo",
+            "txDeviceKey": "source-wireless"
+          },
+          {
+            "name": "source-media",
+            "label": "Media Player",
+            "signalType": "AudioVideo",
+            "txDeviceKey": "source-media"
+          },
+          {
+            "name": "source-cable",
+            "label": "Cable TV",
+            "signalType": "AudioVideo",
+            "txDeviceKey": "source-cable"
+          }
         ],
         "outputPorts": [
-          { "name": "display-1", "label": "Left Display", "signalType": "AudioVideo" },
-          { "name": "display-2", "label": "Right Display", "signalType": "AudioVideo" },
-          { "name": "programAudio", "label": "Program Audio", "signalType": "Audio" }
+          {
+            "name": "display-1",
+            "label": "Left Display",
+            "signalType": "AudioVideo"
+          },
+          {
+            "name": "display-2",
+            "label": "Right Display",
+            "signalType": "AudioVideo"
+          },
+          {
+            "name": "programAudio",
+            "label": "Program Audio",
+            "signalType": "Audio"
+          }
         ]
       }
     },
-        {
+    {
       "name": "Test Panel",
       "key": "browser",
       "type": "mcxpanel",
@@ -159,8 +191,7 @@
         "defaultRoomKey": "room1",
         "useDirectServer": true,
         "theme": "dark",
-        "buttonToolbarTimeoutInS": 30,
-        "developmentServerAddress": "192.168.1.181:5175"
+        "buttonToolbarTimeoutInS": 30
       }
     }
   ],
@@ -354,13 +385,50 @@
     }
   },
   "tieLines": [
-    { "SourceKey": "source-laptop", "SourcePort": "anyOut", "DestinationKey": "matrix-router", "DestinationPort": "source-laptop" },
-    { "SourceKey": "source-wireless", "SourcePort": "anyOut", "DestinationKey": "matrix-router", "DestinationPort": "source-wireless" },
-    { "SourceKey": "source-media", "SourcePort": "anyOut", "DestinationKey": "matrix-router", "DestinationPort": "source-media" },
-    { "SourceKey": "source-cable", "SourcePort": "anyOut", "DestinationKey": "matrix-router", "DestinationPort": "source-cable" },
-    { "SourceKey": "matrix-router", "SourcePort": "display-1", "DestinationKey": "display-1", "DestinationPort": "hdmiIn1", "type": "video" },
-    { "SourceKey": "matrix-router", "SourcePort": "display-2", "DestinationKey": "display-2", "DestinationPort": "hdmiIn1", "type": "video" },
-    { "SourceKey": "matrix-router", "SourcePort": "programAudio", "DestinationKey": "program-audio", "DestinationPort": "anyAudioIn" }
+    {
+      "SourceKey": "source-laptop",
+      "SourcePort": "anyOut",
+      "DestinationKey": "matrix-router",
+      "DestinationPort": "source-laptop"
+    },
+    {
+      "SourceKey": "source-wireless",
+      "SourcePort": "anyOut",
+      "DestinationKey": "matrix-router",
+      "DestinationPort": "source-wireless"
+    },
+    {
+      "SourceKey": "source-media",
+      "SourcePort": "anyOut",
+      "DestinationKey": "matrix-router",
+      "DestinationPort": "source-media"
+    },
+    {
+      "SourceKey": "source-cable",
+      "SourcePort": "anyOut",
+      "DestinationKey": "matrix-router",
+      "DestinationPort": "source-cable"
+    },
+    {
+      "SourceKey": "matrix-router",
+      "SourcePort": "display-1",
+      "DestinationKey": "display-1",
+      "DestinationPort": "hdmiIn1",
+      "type": "video"
+    },
+    {
+      "SourceKey": "matrix-router",
+      "SourcePort": "display-2",
+      "DestinationKey": "display-2",
+      "DestinationPort": "hdmiIn1",
+      "type": "video"
+    },
+    {
+      "SourceKey": "matrix-router",
+      "SourcePort": "programAudio",
+      "DestinationKey": "program-audio",
+      "DestinationPort": "anyAudioIn"
+    }
   ],
   "rooms": [
     {
@@ -398,10 +466,34 @@
             "lighting-1"
           ],
           "rackSensorDeviceKey": "infra-rack-sensor",
-          "displays": [{ "deviceKey": "display-1" }, { "deviceKey": "display-2" }],
+          "displays": [
+            { "deviceKey": "display-1" },
+            { "deviceKey": "display-2" }
+          ],
           "routingDeviceKey": "matrix-router"
         }
       }
     }
-  ]
+  ],
+  "versions": {
+    "essentials": {
+      "version": "3.0.0-rc.7",
+      "repoUrl": "https://github.com/PepperDash/Essentials",
+      "packageId": "PepperDashEssentials"
+    },
+    "packages": [
+      {
+        "packageId": "EssentialsDemoRoom",
+        "version": "1.0.0",
+        "repoUrl": "https://github.com/PepperDash/EssentialsDemoRoom"
+      }
+    ],
+    "userInterfaces": [
+      {
+        "packageId": "EssentialsDemoReactApp",
+        "version": "1.0.0",
+        "repoUrl": "https://github.com/PepperDash/EssentialsDemoReactApp"
+      }
+    ]
+  }
 }
