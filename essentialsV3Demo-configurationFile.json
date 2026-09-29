@@ -44,30 +44,30 @@
     {
       "key": "source-wireless",
       "name": "Wireless Presentation",
-      "type": "genericsource",
+      "type": "mockHdmiSource",
       "properties": {}
     },
     {
       "key": "source-media",
       "name": "Media Player",
-      "type": "genericsource",
+      "type": "mockHdmiSource",
       "properties": {}
     },
     {
       "key": "source-cable",
       "name": "Cable TV",
-      "type": "genericsource",
+      "type": "mockHdmiSource",
       "properties": {}
     },
     {
       "key": "audio-room",
-      "name": "Room Volume",
+      "name": "Program Audio",
       "type": "mockaudiodevice",
       "properties": {}
     },
     {
       "key": "program-audio",
-      "name": "Program Audio",
+      "name": "Program Audio Output",
       "type": "genericaudiooutwithvolume",
       "properties": {
         "volumeDeviceKey": "audio-room"
@@ -102,96 +102,6 @@
       "properties": {}
     },
     {
-      "key": "infra-dm-switcher",
-      "name": "DM Presentation Switcher",
-      "type": "mockInfrastructureDevice",
-      "properties": { "startingStatus": "IsOk" }
-    },
-    {
-      "key": "infra-wireless-gateway",
-      "name": "Wireless Presentation Gateway",
-      "type": "mockInfrastructureDevice",
-      "properties": { "startingStatus": "InError" }
-    },
-    {
-      "key": "infra-network-switch",
-      "name": "Network Switch",
-      "type": "mockInfrastructureDevice",
-      "properties": { "startingStatus": "IsOk" }
-    },
-    {
-      "key": "infra-control-processor",
-      "name": "Control Processor",
-      "type": "mockInfrastructureDevice",
-      "properties": { "startingStatus": "IsOk" }
-    },
-    {
-      "key": "infra-dsp",
-      "name": "DSP Audio Processor",
-      "type": "mockInfrastructureDevice",
-      "properties": { "startingStatus": "IsOk" }
-    },
-    {
-      "key": "infra-camera",
-      "name": "PTZ Camera",
-      "type": "mockInfrastructureDevice",
-      "properties": { "startingStatus": "IsOk" }
-    },
-    {
-      "key": "infra-room-pc",
-      "name": "Room PC",
-      "type": "mockInfrastructureDevice",
-      "properties": { "startingStatus": "IsOk" }
-    },
-    {
-      "key": "infra-poe-injector",
-      "name": "PoE Injector",
-      "type": "mockInfrastructureDevice",
-      "properties": { "startingStatus": "IsOk" }
-    },
-    {
-      "key": "infra-access-point",
-      "name": "Wireless Access Point",
-      "type": "mockInfrastructureDevice",
-      "properties": { "startingStatus": "IsOk" }
-    },
-    {
-      "key": "infra-video-scaler",
-      "name": "Video Scaler",
-      "type": "mockInfrastructureDevice",
-      "properties": { "startingStatus": "InWarning" }
-    },
-    {
-      "key": "infra-touchpanel-processor",
-      "name": "Touch Panel Processor",
-      "type": "mockInfrastructureDevice",
-      "properties": { "startingStatus": "StatusUnknown" }
-    },
-    {
-      "key": "infra-matrix-router",
-      "name": "Matrix Router",
-      "type": "mockInfrastructureDevice",
-      "properties": { "startingStatus": "IsOk" }
-    },
-    {
-      "key": "infra-ups",
-      "name": "UPS",
-      "type": "mockInfrastructureDevice",
-      "properties": { "startingStatus": "IsOk" }
-    },
-    {
-      "key": "infra-power-sequencer",
-      "name": "Power Sequencer",
-      "type": "mockInfrastructureDevice",
-      "properties": { "startingStatus": "IsOk" }
-    },
-    {
-      "key": "infra-ir-repeater",
-      "name": "IR Repeater",
-      "type": "mockInfrastructureDevice",
-      "properties": { "startingStatus": "IsOk" }
-    },
-    {
       "key": "infra-rack-sensor",
       "name": "Rack Sensor",
       "type": "mockRackSensor",
@@ -207,9 +117,9 @@
       "properties": {
         "inputPorts": [
           { "name": "source-laptop", "label": "Laptop", "signalType": "AudioVideo", "txDeviceKey": "source-laptop" },
-          { "name": "source-wireless", "label": "Wireless Presentation", "signalType": "AudioVideo" },
-          { "name": "source-media", "label": "Media Player", "signalType": "AudioVideo" },
-          { "name": "source-cable", "label": "Cable TV", "signalType": "AudioVideo" }
+          { "name": "source-wireless", "label": "Wireless Presentation", "signalType": "AudioVideo", "txDeviceKey": "source-wireless" },
+          { "name": "source-media", "label": "Media Player", "signalType": "AudioVideo", "txDeviceKey": "source-media" },
+          { "name": "source-cable", "label": "Cable TV", "signalType": "AudioVideo", "txDeviceKey": "source-cable" }
         ],
         "outputPorts": [
           { "name": "display-1", "label": "Left Display", "signalType": "AudioVideo" },
@@ -473,21 +383,15 @@
         "tech": {
           "password": "1234",
           "systemStatusDeviceKeys": [
-            "infra-dm-switcher",
-            "infra-wireless-gateway",
-            "infra-network-switch",
-            "infra-control-processor",
-            "infra-dsp",
-            "infra-camera",
-            "infra-room-pc",
-            "infra-poe-injector",
-            "infra-access-point",
-            "infra-video-scaler",
-            "infra-touchpanel-processor",
-            "infra-matrix-router",
-            "infra-ups",
-            "infra-power-sequencer",
-            "infra-ir-repeater"
+            "matrix-router",
+            "display-1",
+            "display-2",
+            "audio-room",
+            "source-laptop",
+            "source-wireless",
+            "source-media",
+            "source-cable",
+            "lighting-1"
           ],
           "rackSensorDeviceKey": "infra-rack-sensor",
           "displays": [{ "deviceKey": "display-1" }, { "deviceKey": "display-2" }],
