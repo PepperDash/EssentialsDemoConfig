@@ -2,7 +2,7 @@
 
 In this tutorial you'll load the demo onto a processor, open its touchpanel UI in a web browser, and use the room the way a meeting-room user would.
 
-**You'll need:** a 4-series processor or VC-4 server, the [demo `.cpz`](https://github.com/PepperDash/EssentialsDemoConfig/raw/main/artifacts/cpz/PepperDashEssentials.3.0.0-rc.7.net8_EssentialsDemoConfig-v1.0.0.cpz), and a browser on the same network.
+**You'll need:** a 4-series processor or VC-4 server, the [demo `.cpz`](https://github.com/PepperDash/EssentialsDemoConfig/raw/main/artifacts/cpz/PepperDashEssentials.3.0.0-rc.10.net8_EssentialsDemoConfig-v1.0.1.cpz), and a browser on the same network.
 
 ## Step 1: Load the program
 
@@ -51,7 +51,7 @@ Essentials has its own browser-based developer tools, **Essentials Dev Tools**, 
    The processor uses a self-signed certificate, so your browser shows a security warning the first time. Accept it to continue.
 2. On the **Sign In** page, enter the processor's username and password, the same account you use for SSH or Toolbox, and select **Sign In**.
 
-Dev Tools finds the Essentials programs running on the processor and opens the first one on the **Versions** page. The drop-down menu in the top bar shows which program you're looking at: **app01** is the demo in program slot 1. The links along the top bar are the rest of the tools. This tutorial uses **Mobile Control** and **Routing**.
+Dev Tools finds the Essentials programs running on the processor and opens the first one on the **Versions** page. Select **Devices** to see the same devices `devlist` listed in Step 1; selecting one shows its properties and lets you call its methods (see [Inspect and control devices](../how-to/inspect-devices-from-console.md)). The drop-down menu in the top bar shows which program you're looking at: **app01** is the demo in program slot 1. The links along the top bar are the rest of the tools. This tutorial uses **Mobile Control** and **Routing**.
 
 <!-- TODO(verify): the Dev Tools address and sign-in on VC-4. -->
 

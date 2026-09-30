@@ -12,7 +12,7 @@
     href: simulate-lost-video-signal.md
 - name: Work with the processor
   items:
-  - name: Inspect and control devices from the console
+  - name: Inspect and control devices
     href: inspect-devices-from-console.md
   - name: Load updates onto the processor
     href: load-updates.md

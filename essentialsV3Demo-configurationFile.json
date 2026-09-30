@@ -477,7 +477,7 @@
   ],
   "versions": {
     "essentials": {
-      "version": "3.0.0-rc.7",
+      "version": "3.0.0-rc.10",
       "repoUrl": "https://github.com/PepperDash/Essentials",
       "packageId": "PepperDashEssentials"
     },
@@ -491,7 +491,7 @@
     "userInterfaces": [
       {
         "packageId": "EssentialsDemoReactApp",
-        "version": "1.2.0",
+        "version": "1.2.1",
         "repoUrl": "https://github.com/PepperDash/EssentialsDemoReactApp"
       }
     ]

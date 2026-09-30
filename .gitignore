@@ -1,3 +1,5 @@
 /dependencies/
 /source-files/
 .DS_Store
+/artifacts/assets/
+/artifacts/cpz/archive/
