@@ -491,7 +491,7 @@
     "userInterfaces": [
       {
         "packageId": "EssentialsDemoReactApp",
-        "version": "1.0.0-feature-initial-development.3",
+        "version": "1.2.0",
         "repoUrl": "https://github.com/PepperDash/EssentialsDemoReactApp"
       }
     ]

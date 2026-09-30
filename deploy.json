@@ -37,10 +37,10 @@
   "projectRoot": "..",
   "bundle": {
     "types": {
-      "servicesCompiled": true,
+      "servicesCompiled": false,
       "servicesSource": false,
       "asset": false,
-      "essentialsEmbedded": false
+      "essentialsEmbedded": true
     },
     "version": "1.0.0",
     "versionSource": "manual",

@@ -30,7 +30,7 @@ Nothing needs to be wired up. Once you've seen it run, you can change it: the ro
 ## What you need
 
 - A Crestron 4-series processor or a VC-4 server you can load programs onto.
-- The demo program file (`.cpz`). <!-- TODO(user): link to the published .cpz, e.g. a GitHub release -->
+- The demo program file: [download the `.cpz`](https://github.com/PepperDash/EssentialsDemoConfig/raw/main/artifacts/cpz/PepperDashEssentials.3.0.0-rc.7.net8_EssentialsDemoConfig-v1.0.0.cpz) (about 40 MB). It's kept in this repo's `artifacts/cpz/` folder.
 - A web browser on the same network as the processor.
 - An SSH client or Crestron Toolbox, for the processor console.
 
