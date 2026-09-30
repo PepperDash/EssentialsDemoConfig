@@ -4,8 +4,8 @@ These tutorials are a guided first look at Essentials. Do them in order: each bu
 
 | Tutorial | You will | Time |
 |---|---|---|
-| [1. Run the demo](01-run-the-demo.md) | Load the program, open the touchpanel UI in a browser and use the room | 20 min |
-| [2. Explore the technician pages](02-explore-tech-pages.md) | Unlock the tech menu and see device status, display control and matrix routing | 15 min |
+| [1. Run the demo](01-run-the-demo.md) | Load the program, open Essentials Dev Tools and the touchpanel UI in a browser, and use the room | 20 min |
+| [2. Explore the technician pages](02-explore-tech-pages.md) | Unlock the tech menu, see device status, display control and matrix routing, and route from Dev Tools | 15 min |
 | [3. Make your first config change](03-first-config-change.md) | Change the room's behavior by editing its config file, without recompiling anything | 15 min |
 | [4. Add a source without writing code](04-add-a-source.md) | Add a new source device and route it, entirely from config | 25 min |
 

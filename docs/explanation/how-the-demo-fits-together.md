@@ -60,7 +60,9 @@ matrix-router (display-1) ──► Left Display (hdmiIn1)
 
 When the room asks for "Laptop to Left Display", Essentials walks the tie lines backward from the display, finds the path through the matrix, and switches every device along it: the matrix's crosspoint, then the display's input. It then records the display's new current source.
 
-The room's source list and advanced routing, and the tech Routing page, all drive the same matrix device, which is why the tech page shows routes made from the room screens.
+The room's source list and advanced routing, the tech Routing page and Essentials Dev Tools all drive the same matrix device. So each one shows routes made from the others. When the matrix reports a crosspoint change, Essentials traces it back through the tie lines to each affected display and updates that display's current source, whoever made the change.
+
+To see this graph live, open Essentials Dev Tools (`https://<processor-ip>/cws/debug/`) and select **Routing**. It draws every device, port and tie line from the loaded config, shows the current routes as they change, and lets you make or clear a route at any destination port.
 
 More: [connection-based routing](https://pepperdash.github.io/Essentials/docs/technical-docs/Connection-Based-Routing.html) in the Essentials docs.
 

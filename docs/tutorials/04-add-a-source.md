@@ -100,6 +100,7 @@ Copy the file to the processor, run `progreset -p:1`, and refresh the UI once th
 2. **Advanced sharing:** turn on **Advanced Sharing**. Guest Laptop is in the source tabs. Route it to just the **Left Display**.
 3. **Tech Routing:** open the tech menu and go to **Routing**. **Guest Laptop** is a fifth input, with a signal dot, and the **Left Display** output shows it.
 4. **System Status:** **Guest Laptop** has its own row, showing **Online**.
+5. **Dev Tools:** open Essentials Dev Tools and select **Routing**. The diagram has a new **Guest Laptop** box, tied into the **Matrix Router**'s new input, and the path to the **Left Display** is drawn through the matrix. You didn't change anything to make that happen: Dev Tools draws the diagram from the same devices and tie lines Essentials loaded from your config.
 
 ## What you've learned
 

@@ -11,6 +11,7 @@ Every device in the demo is simulated. Load one program file, start it, and you 
 - Source selection, with per-display routing through a matrix switcher.
 - Lighting scenes, help and volume.
 - A technician menu with system status, display power and input control, matrix routing, volume and version info.
+- Essentials Dev Tools, the framework's browser-based developer tools, for finding UI clients and watching and making routes.
 
 Nothing needs to be wired up. Once you've seen it run, you can change it: the room is defined by a JSON config file, not a compiled program.
 
