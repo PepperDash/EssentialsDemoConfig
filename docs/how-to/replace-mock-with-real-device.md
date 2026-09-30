@@ -43,7 +43,7 @@ A tie line refers to a device's ports by name, and different device types name t
 { "SourceKey": "source-media", "SourcePort": "hdmiOut", "DestinationKey": "matrix-router", "DestinationPort": "source-media" },
 ```
 
-To see a device's ports once the program is running, run `devprops:1 source-media` and look for its input and output ports.
+To see a device's ports once the program is running, run `devprops:1 source-media` and look for its input and output ports. Or open Essentials Dev Tools and select **Routing**: the diagram shows every device with its ports named, and draws each tie line that connects.
 
 If a tie line names a port the device doesn't have, Essentials logs an error at startup and routes through that tie line won't work.
 
@@ -52,6 +52,7 @@ If a tie line names a port the device doesn't have, Essentials logs an error at 
 Run `progreset -p:1`, then:
 
 - `devlist:1`: the device is listed with its new type.
+- In Dev Tools' **Routing** diagram, the device is connected to the matrix by its tie line. A device left unconnected means the tie line's port name doesn't match.
 - Route the source from the UI and confirm the hardware responds.
 
 ## Things that change with the device

@@ -11,5 +11,5 @@ Short, task-focused guides for changing and working with the demo. They assume y
 
 ## Work with the processor
 
-- [Inspect and control devices from the console](inspect-devices-from-console.md)
+- [Inspect and control devices](inspect-devices-from-console.md)
 - [Load updates onto the processor](load-updates.md)

@@ -7,7 +7,7 @@ Once the demo is running, you can update any one of its parts without reloading 
 | The room config | `essentialsV3Demo-configurationFile.json` | `/user/program1/` | `progreset -p:1` |
 | A plugin, such as the demo room plugin | its `.cplz` | `/user/program1/plugins/` | `progreset -p:1` |
 | The touchpanel app | a `.zip` of the app's built files | `/user/program1/mcUserApp/` | `progreset -p:1` |
-| Everything | the [demo `.cpz`](https://github.com/PepperDash/EssentialsDemoConfig/raw/main/artifacts/cpz/PepperDashEssentials.3.0.0-rc.8.net8_EssentialsDemoConfig-v1.0.1.cpz) | `/program01/` | `progload -p:1` |
+| Everything | the [demo `.cpz`](https://github.com/PepperDash/EssentialsDemoConfig/raw/main/artifacts/cpz/PepperDashEssentials.3.0.0-rc.10.net8_EssentialsDemoConfig-v1.0.1.cpz) | `/program01/` | `progload -p:1` |
 
 <!-- TODO(verify): VC-4 equivalents of each path. -->
 
