@@ -11,25 +11,25 @@
         {
           "pattern": "*.cpz",
           "localRoot": "dependencies",
-          "remoteDir": "/program02",
+          "remoteDir": "/program01",
           "children": [
             {
               "pattern": "*configurationFile.json",
               "localRoot": "EssentialsDemoConfig",
-              "remoteDir": "/user/program2"
+              "remoteDir": "/user/program1"
             },
             {
               "pattern": "*.cplz",
               "localRoot": "dependencies",
-              "remoteDir": "/user/program2/plugins"
+              "remoteDir": "/user/program1/plugins"
             },
             {
               "pattern": "*demo-app*.zip",
               "localRoot": "dependencies",
-              "remoteDir": "/user/program2/mcUserApp"
+              "remoteDir": "/user/program1/mcUserApp"
             }
           ],
-          "programSlot": "02"
+          "programSlot": "01"
         }
       ]
     }
