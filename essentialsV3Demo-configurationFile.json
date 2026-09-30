@@ -477,7 +477,7 @@
   ],
   "versions": {
     "essentials": {
-      "version": "3.0.0-rc.7",
+      "version": "3.0.0-rc.8",
       "repoUrl": "https://github.com/PepperDash/Essentials",
       "packageId": "PepperDashEssentials"
     },

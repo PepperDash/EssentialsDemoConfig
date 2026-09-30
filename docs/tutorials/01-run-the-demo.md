@@ -2,7 +2,7 @@
 
 In this tutorial you'll load the demo onto a processor, open its touchpanel UI in a web browser, and use the room the way a meeting-room user would.
 
-**You'll need:** a 4-series processor or VC-4 server, the [demo `.cpz`](https://github.com/PepperDash/EssentialsDemoConfig/raw/main/artifacts/cpz/PepperDashEssentials.3.0.0-rc.7.net8_EssentialsDemoConfig-v1.0.0.cpz), and a browser on the same network.
+**You'll need:** a 4-series processor or VC-4 server, the [demo `.cpz`](https://github.com/PepperDash/EssentialsDemoConfig/raw/main/artifacts/cpz/PepperDashEssentials.3.0.0-rc.8.net8_EssentialsDemoConfig-v1.0.1.cpz), and a browser on the same network.
 
 ## Step 1: Load the program
 
