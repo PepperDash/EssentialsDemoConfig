@@ -38,33 +38,61 @@ devlist:1
 
 You should see a list of devices, including `display-1`, `display-2`, `matrix-router` and `room1`. Each of these was created from an entry in the config file. You'll edit that file in Tutorial 3.
 
-## Step 2: Get a UI token
+## Step 2: Open Dev Tools
 
-The touchpanel UI is served by the processor itself, by Essentials' Mobile Control web server on port **50002**. Each UI client connects with a token that ties it to a room.
+Essentials has its own browser-based developer tools, **Essentials Dev Tools**, and the demo `.cpz` installs them. When Essentials starts, it unpacks them into the processor's own web server. You'll use them to open the UI, and later to watch routing happen.
 
-In the console, run:
+1. In your browser, go to:
 
-```
-mobilegetclientinfo:1
-```
+   ```
+   https://<processor-ip>/cws/debug/
+   ```
 
-It lists the clients the program has set up, one per line:
+   The processor uses a self-signed certificate, so your browser shows a security warning the first time. Accept it to continue.
+2. On the **Sign In** page, enter the processor's username and password, the same account you use for SSH or Toolbox, and select **Sign In**.
 
-```
-RoomKey: room1 Token: 3f2c9a1e-...
-```
+Dev Tools finds the Essentials programs running on the processor and opens the first one on the **Versions** page. The drop-down menu in the top bar shows which program you're looking at: **app01** is the demo in program slot 1. The links along the top bar are the rest of the tools. This tutorial uses **Mobile Control** and **Routing**.
 
-Copy the token.
-
-<!-- TODO(verify): command name casing/slot suffix on 4-series and VC-4, and that the "browser" (mcxpanel) device's token appears here after a fresh load. -->
+<!-- TODO(verify): the Dev Tools address and sign-in on VC-4. -->
 
 ## Step 3: Open the UI
 
-In your browser, go to:
+The touchpanel UI is served by the processor itself, by Essentials' Mobile Control web server on port **50002**. Each UI client connects with a token that ties it to a room. You can get a client's address from Dev Tools or from the console.
 
-```
-http://<processor-ip>:50002/mc/app?token=<token>
-```
+# [Dev Tools](#tab/devtools)
+
+1. In Dev Tools, select **Mobile Control** in the top bar.
+2. The **Direct Server** section shows the Mobile Control server's **User App URL** and **Server Port** (50002), and how many clients are defined and connected.
+3. The **Clients** table has a row for each UI client, with its **Room Key**, **Token** and **URL**. Find a row whose **Room Key** is `room1` and select its **URL**.
+
+The UI opens in a new tab. To open it on another device, right-click the link and copy its address.
+
+> [!TIP]
+> To make a new client, select **Add +** above the table, enter `room1` as the **Room Key**, and select **Create**. The new row has its own token and URL.
+
+# [Console](#tab/console)
+
+1. In the console, run:
+
+   ```
+   mobilegetclientinfo:1
+   ```
+
+   It lists the clients the program has set up, one per line:
+
+   ```
+   RoomKey: room1 Token: 3f2c9a1e-...
+   ```
+
+2. Copy the token, then in your browser go to:
+
+   ```
+   http://<processor-ip>:50002/mc/app?token=<token>
+   ```
+
+<!-- TODO(verify): command name casing/slot suffix on 4-series and VC-4, and that the "browser" (mcxpanel) device's token appears here after a fresh load. -->
+
+---
 
 After a moment of "syncing", you'll see the **Demo Room** splash screen, with the PepperDash logo and **Touch Screen to Begin**.
 
@@ -95,6 +123,17 @@ The selected source changes. Behind the scenes Essentials has just done three th
 3. Recorded the new current source on each display.
 
 You didn't write any of that logic. The room's config lists which destinations each source goes to, and Essentials works out the path through the switcher from the config's *tie lines*, the equivalent of the cable runs on a wiring diagram.
+
+### See the route in Dev Tools
+
+Switch to your Dev Tools tab and select **Routing** in the top bar. It draws the demo's wiring as a diagram: each device is a box with its input and output ports, and each tie line is a line between them, coloured by signal type. The **Live** badge in the toolbar means the diagram is getting route changes from the processor as they happen.
+
+Inside the **Matrix Router** box you can see which input each output is currently switched to: **Media Player** to both displays and to program audio. Select a tie line or a device to highlight the whole signal path, and select an empty part of the diagram to clear it.
+
+Keep the Routing tab open while you do the next step. The diagram changes as you route.
+
+> [!TIP]
+> If the badge shows **Offline** and a banner says the live feedback connection failed, open the address in the banner in a new tab, accept its certificate, then reload the Routing page.
 
 ## Step 6: Route each display separately
 
@@ -136,6 +175,7 @@ When the room shuts down, it clears the routes and you're back at the splash scr
 
 - The whole demo system, including the UI, runs from one program file.
 - The UI is a web app served by the processor. Any browser with a token can be a touchpanel.
+- Essentials Dev Tools, also served by the processor, gives you each UI client's address and a live diagram of the system's routing.
 - Routing, audio-follows-video and shutdown come from the framework and the room's config, not from custom code.
 
 **Next:** [Tutorial 2: Explore the technician pages](02-explore-tech-pages.md)

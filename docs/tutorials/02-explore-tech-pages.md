@@ -55,8 +55,21 @@ Tap **None**, then an output, to clear that output for the selected signal type.
 
 Back in the first tab, the **Right Display** output now shows Wireless Presentation for both audio and video. Both pages are driven by the same matrix device, so when the room routes a source through it, the tech page shows it.
 
-> [!NOTE]
-> Routes you make *on the tech Routing page* switch the matrix directly, like a technician using the switcher's own front panel. The room's destination cards don't track those; they show what the room itself routed.
+It works the other way too. Routes you make *on the tech Routing page* switch the matrix directly, like a technician using the switcher's own front panel. Essentials notices the matrix change, works out which source now reaches each display, and updates that display's current source. So the room's destination cards follow within about half a second.
+
+### Route from Dev Tools
+
+Essentials Dev Tools can make routes too, from its **Routing** diagram. Open Dev Tools as in [Tutorial 1](01-run-the-demo.md#step-2-open-dev-tools) and select **Routing**. Keep a UI tab on the tech Routing page and another on **Advanced Sharing** so you can watch both.
+
+1. In the diagram, find the **Left Display** box and select its input port, **hdmiIn1**. A small panel opens, listing every source that can reach that port. A **✓** marks the current one.
+2. Select **Cable TV**.
+
+The port shows a pulsing blue dot until the processor confirms the route. Then the diagram redraws the path through the **Matrix Router**. In the UI, the tech Routing page's **Left Display** output shows Cable TV, and so does the **Left Display** card on Advanced Sharing.
+
+You named only a source and a destination. Essentials found the path through the matrix from the tie lines, just as it does for the room's own routes. To clear the display, select the port again and choose **None — clear route**.
+
+> [!TIP]
+> Dev Tools, the tech Routing page and the room's screens all switch the same matrix device, so each one shows routes made from the others. That makes Dev Tools a quick way to check what's really routed when a UI looks wrong.
 
 ## Step 5: Volume
 
@@ -74,6 +87,7 @@ Tap **Exit Technician Controls** to go back to the room.
 ## What you've learned
 
 - The tech pages show live state from the same devices the room uses: communication status, warm-up and cool-down, matrix crosspoints and sensor readings.
+- Routes made from the room screens, the tech Routing page or Dev Tools all switch the same devices, so every view stays in sync.
 - Everything on these pages is configured, not hard-coded: which devices appear on System Status, which displays are listed, which matrix is routed, and the PIN are all set in the room's config.
 
 **Next:** [Tutorial 3: Make your first config change](03-first-config-change.md)
