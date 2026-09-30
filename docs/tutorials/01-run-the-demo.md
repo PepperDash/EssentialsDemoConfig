@@ -2,11 +2,11 @@
 
 In this tutorial you'll load the demo onto a processor, open its touchpanel UI in a web browser, and use the room the way a meeting-room user would.
 
-**You'll need:** a 4-series processor or VC-4 server, the demo `.cpz`, and a browser on the same network. <!-- TODO(user): link to the published .cpz -->
+**You'll need:** a 4-series processor or VC-4 server, the [demo `.cpz`](https://github.com/PepperDash/EssentialsDemoConfig/raw/main/artifacts/cpz/PepperDashEssentials.3.0.0-rc.7.net8_EssentialsDemoConfig-v1.0.0.cpz), and a browser on the same network.
 
 ## Step 1: Load the program
 
-The `.cpz` contains everything: Essentials, the demo room plugin, the room's config file and the touchpanel app. You load it the same way as any other program.
+The `.cpz` contains everything: Essentials, the demo room plugin, the room's config file, the touchpanel app and Essentials Dev Tools. You load it the same way as any other program.
 
 # [4-series processor](#tab/4series)
 
