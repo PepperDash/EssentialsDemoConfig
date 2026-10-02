@@ -10,17 +10,9 @@ In this tutorial you'll change four things about the room by editing that file, 
 
 The running config file is `essentialsV3Demo-configurationFile.json`. Copy it from the processor to your computer:
 
-# [4-series processor](#tab/4series)
-
 `/user/program1/essentialsV3Demo-configurationFile.json`
 
-# [VC-4](#tab/vc4)
-
-`/opt/crestron/virtualcontrol/RunningPrograms/<room-id>/User/essentialsV3Demo-configurationFile.json`
-
----
-
-<!-- TODO(verify): confirm where the bundled .cpz places the config on each platform. -->
+<!-- TODO(verify): confirm where the bundled .cpz places the config. -->
 
 Open it. It has a few top-level sections:
 

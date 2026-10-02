@@ -1,6 +1,6 @@
 # Essentials Demo
 
-A complete, simulated meeting-room system built on [PepperDash Essentials](https://github.com/PepperDash/Essentials). Load one program onto a Crestron 4-series processor or VC-4, open the touchpanel UI in a browser, and explore. No hardware needed.
+A complete, simulated meeting-room system built on [PepperDash Essentials](https://github.com/PepperDash/Essentials). Load one program onto a Crestron 4-series processor, open the touchpanel UI in a browser, and explore. No hardware needed.
 
 **Documentation: https://pepperdash.github.io/EssentialsDemoConfig/**
 

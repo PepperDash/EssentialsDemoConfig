@@ -6,7 +6,7 @@ The demo is three pieces running on one processor: the **Essentials** program, a
 
 ```mermaid
 flowchart LR
-    subgraph Processor["Processor (4-series or VC-4)"]
+    subgraph Processor["4-series processor"]
         Config[/"Config file<br/>(JSON)"/]
         subgraph Essentials["Essentials program"]
             Devices["Devices<br/>displays, sources, matrix,<br/>audio, lighting"]
