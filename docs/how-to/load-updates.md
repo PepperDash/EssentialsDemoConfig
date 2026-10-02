@@ -9,8 +9,6 @@ Once the demo is running, you can update any one of its parts without reloading 
 | The touchpanel app | a `.zip` of the app's built files | `/user/program1/mcUserApp/` | `progreset -p:1` |
 | Everything | the [demo `.cpz`](https://github.com/PepperDash/EssentialsDemoConfig/raw/main/artifacts/cpz/PepperDashEssentials.3.0.0-rc.10.net8_EssentialsDemoConfig-v1.0.1.cpz) | `/program01/` | `progload -p:1` |
 
-<!-- TODO(verify): VC-4 equivalents of each path. -->
-
 For the touchpanel app, zip the *contents* of the React app's `dist/` folder, after `npm run build`. At startup, Essentials unzips it into place, replacing the previous app. The app's connection settings are written by the processor itself, so you don't need to edit them.
 
 ## With PD Toolkit

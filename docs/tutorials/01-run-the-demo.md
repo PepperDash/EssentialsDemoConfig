@@ -2,13 +2,11 @@
 
 In this tutorial you'll load the demo onto a processor, open its touchpanel UI in a web browser, and use the room the way a meeting-room user would.
 
-**You'll need:** a 4-series processor or VC-4 server, the [demo `.cpz`](https://github.com/PepperDash/EssentialsDemoConfig/raw/main/artifacts/cpz/PepperDashEssentials.3.0.0-rc.10.net8_EssentialsDemoConfig-v1.0.1.cpz), and a browser on the same network.
+**You'll need:** a 4-series processor, the [demo `.cpz`](https://github.com/PepperDash/EssentialsDemoConfig/raw/main/artifacts/cpz/PepperDashEssentials.3.0.0-rc.10.net8_EssentialsDemoConfig-v1.0.1.cpz), and a browser on the same network.
 
 ## Step 1: Load the program
 
 The `.cpz` contains everything: Essentials, the demo room plugin, the room's config file, the touchpanel app and Essentials Dev Tools. You load it the same way as any other program.
-
-# [4-series processor](#tab/4series)
 
 1. Copy the `.cpz` to the processor's `/program01/` folder. You can use Crestron Toolbox's file manager or any SFTP client.
 2. Open the processor console (SSH, or Toolbox's Text Console) and run:
@@ -18,15 +16,6 @@ The `.cpz` contains everything: Essentials, the demo room plugin, the room's con
    ```
 
 <!-- TODO(verify): confirm the exact upload steps and whether progload is needed after an SFTP copy of the bundled .cpz. -->
-
-# [VC-4](#tab/vc4)
-
-1. In the VC-4 web interface, add the `.cpz` to the program library.
-2. Create a room that uses the program, and start it.
-
-<!-- TODO(verify): VC-4 menu names, and whether the Mobile Control direct server port (50002) needs opening on the VC-4 host. -->
-
----
 
 The program takes a minute or two to start. When it's ready, the console shows Essentials' startup messages, finishing with the devices it created.
 
@@ -52,8 +41,6 @@ Essentials has its own browser-based developer tools, **Essentials Dev Tools**, 
 2. On the **Sign In** page, enter the processor's username and password, the same account you use for SSH or Toolbox, and select **Sign In**.
 
 Dev Tools finds the Essentials programs running on the processor and opens the first one on the **Versions** page. Select **Devices** to see the same devices `devlist` listed in Step 1; selecting one shows its properties and lets you call its methods (see [Inspect and control devices](../how-to/inspect-devices-from-console.md)). The drop-down menu in the top bar shows which program you're looking at: **app01** is the demo in program slot 1. The links along the top bar are the rest of the tools. This tutorial uses **Mobile Control** and **Routing**.
-
-<!-- TODO(verify): the Dev Tools address and sign-in on VC-4. -->
 
 ## Step 3: Open the UI
 
@@ -90,7 +77,7 @@ The UI opens in a new tab. To open it on another device, right-click the link an
    http://<processor-ip>:50002/mc/app?token=<token>
    ```
 
-<!-- TODO(verify): command name casing/slot suffix on 4-series and VC-4, and that the "browser" (mcxpanel) device's token appears here after a fresh load. -->
+<!-- TODO(verify): command name casing/slot suffix, and that the "browser" (mcxpanel) device's token appears here after a fresh load. -->
 
 ---
 
