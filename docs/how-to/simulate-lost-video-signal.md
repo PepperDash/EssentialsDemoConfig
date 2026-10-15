@@ -47,3 +47,13 @@ Every connected UI updates immediately. To restore the signal, execute the metho
 ---
 
 Both call the same method, and both can call any public method on any device. See [Inspect and control devices](inspect-devices-from-console.md).
+
+## Do the startup change with an AI agent
+
+Once you've made the startup edit by hand, you can describe it to an AI agent instead. [Make config changes with an AI agent](use-an-ai-agent.md) covers setting one up and checking its work.
+
+```text
+In essentialsV3Demo-configurationFile.json, make the source-cable device start with no video signal. Change nothing else, and show me the line you changed.
+```
+
+The diff should show one change: `startsWithSync` set to `false` in the `source-cable` entry's `properties`. Load the config and run `progreset -p:1`. To make the change permanent, ask the agent to set `startsWithSync` back to `true`, load the config and restart the program. To restore the signal right now without a restart, call `SetVideoSyncDetected` with `true` as described above, which lasts until the next restart.

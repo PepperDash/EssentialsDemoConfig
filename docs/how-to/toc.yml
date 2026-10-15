@@ -2,6 +2,8 @@
   href: index.md
 - name: Configure the room
   items:
+  - name: Make config changes with an AI agent
+    href: use-an-ai-agent.md
   - name: Add or remove a source
     href: add-a-source.md
   - name: Add a display

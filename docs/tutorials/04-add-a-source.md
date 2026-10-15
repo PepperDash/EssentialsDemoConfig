@@ -102,10 +102,47 @@ Copy the file to the processor, run `progreset -p:1`, and refresh the UI once th
 4. **System Status:** **Guest Laptop** has its own row, showing **Online**.
 5. **Dev Tools:** open Essentials Dev Tools and select **Routing**. The diagram has a new **Guest Laptop** box, tied into the **Matrix Router**'s new input, and the path to the **Left Display** is drawn through the matrix. You didn't change anything to make that happen: Dev Tools draws the diagram from the same devices and tie lines Essentials loaded from your config.
 
+## Step 7: Add another source with an AI agent
+
+Adding a source by hand took five edits in five places. An agent can make all five from one description, and because Guest Laptop now exists as a working example, you can point it at that. Try it with a sixth source, a **Document Camera**.
+
+1. **Set up an agent**, if you haven't. See [Make config changes with an AI agent](../how-to/use-an-ai-agent.md).
+2. **Give it this prompt:**
+
+   ```text
+   In essentialsV3Demo-configurationFile.json, add a sixth source called "Document Camera"
+   with the key source-doccam, modeled on source-guest. It needs five entries:
+
+   1. a device in `devices`, type mockHdmiSource;
+   2. an input in the matrix-router device's inputPorts, with txDeviceKey source-doccam;
+   3. a tie line from source-doccam's anyOut port to that matrix input;
+   4. an entry in sourceLists > default with order 6, routed to display1, display2 and
+      programAudio the same way source-guest is;
+   5. source-doccam added to the room's tech.systemStatusDeviceKeys.
+
+   Change nothing else. Keep the file valid JSON, and list every place you changed.
+   ```
+
+3. **Review what it did.** The agent's list and the diff should both show exactly five places, matching Steps 1 to 5. Check that the same key, `source-doccam`, is used in all five, that the tie line's `DestinationPort` matches the new input's `name`, and that the new source-list entry's routes use the destination-list keys `display1` and `display2`, not the device keys `display-1` and `display-2`.
+4. **Load and try it.** Repeat [Step 6](#step-6-load-and-try-it). **Document Camera** is the sixth source tab, with a sixth input on the tech Routing page, a row on System Status, and a new box in Dev Tools' **Routing** diagram.
+
+Once you've shown the agent a working example, a much shorter prompt does the same job:
+
+```text
+Add a source called "Document Camera" (key source-doccam) to essentialsV3Demo-configurationFile.json, wired and routed the same way as source-guest. List every place you changed.
+```
+
+To take the source out again, ask for the opposite:
+
+```text
+Remove source-doccam from essentialsV3Demo-configurationFile.json, along with everything that refers to it. List every place you removed it from.
+```
+
 ## What you've learned
 
 - A device, a port on the switcher, a tie line and a source-list entry are all it takes to add a source. Every screen that shows sources picked it up without any UI or program change.
 - Routes are described by *destination*. Essentials finds the physical path through the tie lines, so moving a cable means changing one tie line rather than rewriting routing logic.
+- An AI agent can make all of a source's edits from one description, especially if you point it at a working source to copy. You still review the diff and check the UI.
 - Replacing a simulated device with real hardware works the same way: change the device's `type` and give it connection details. See [Replace a simulated device with a real one](../how-to/replace-mock-with-real-device.md).
 
 ## Where to go next
