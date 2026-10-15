@@ -101,10 +101,40 @@ Watch the commas: each entry except the last ends with one. A JSON mistake means
 > [!TIP]
 > If the program doesn't start or the room is missing, the config file probably has a JSON error. The console shows the error at startup. Fix the file, copy it again and run `progreset -p:1` again.
 
+## Step 8: Make the same kind of changes with an AI agent
+
+You've made four changes by hand, so you know what each one does. You can also describe changes to an AI agent, such as GitHub Copilot or Claude, and let it edit the file. On a real project the config is thousands of lines long, and this is often how you'd work.
+
+1. **Set up an agent.** Follow [Make config changes with an AI agent](../how-to/use-an-ai-agent.md), which covers the tools, how to review what an agent does, and what to watch for. Open the folder with your config file in your editor.
+2. **Ask for four more changes.** Use different values from Steps 2 to 5, so you can tell the agent's work from your own. Give it this prompt:
+
+   ```text
+   In essentialsV3Demo-configurationFile.json, make these four changes and nothing else:
+
+   1. Change the room's help message to "Call the AV team on x5555".
+   2. Change shutdownPromptSeconds to 15.
+   3. Change the tech password to 1357.
+   4. Add a "Movie" scene, with the id "movie", to the lighting-1 device's scenes, just before the "Default" scene.
+
+   Keep the file valid JSON. When you're done, list each line you changed.
+   ```
+
+3. **Review what it did.** The agent's list should show four places, and the diff should show the same four. Check that the new scene is in the `scenes` list with commas in the right places, and that no other part of the file changed. [How to check an agent's work](../how-to/use-an-ai-agent.md#check-what-it-did) has the full checklist.
+4. **Load and check it.** Repeat [Step 6](#step-6-load-the-changes), then check the new values: your help message, **Movie** in the lighting list, a 15-second countdown, and **1357** opening the tech menu while **2468** now shows **Incorrect**.
+
+You don't have to know where a setting lives to ask for it. Try this prompt, which names no keys:
+
+```text
+Make the End Session countdown in essentialsV3Demo-configurationFile.json 20 seconds. Tell me which setting you changed and what its old value was.
+```
+
+The agent finds `shutdownPromptSeconds` itself. Because you read the diff, you still know exactly what changed.
+
 ## What you've learned
 
 - Essentials reads the room, its devices and its settings from one config file at startup.
 - Changing the config and restarting the program is all it takes. The compiled program didn't change.
 - The same program can run a different room just by being given a different config file. That's how one Essentials build runs many rooms.
+- An AI agent can make config changes from a plain description. You still review its diff and check the result in the UI.
 
 **Next:** [Tutorial 4: Add a source without writing code](04-add-a-source.md)

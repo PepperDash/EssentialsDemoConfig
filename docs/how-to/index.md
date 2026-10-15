@@ -4,6 +4,7 @@ Short, task-focused guides for changing and working with the demo. They assume y
 
 ## Configure the room
 
+- [Make config changes with an AI agent](use-an-ai-agent.md)
 - [Add or remove a source](add-a-source.md)
 - [Add a display](add-a-display.md)
 - [Replace a simulated device with a real one](replace-mock-with-real-device.md)

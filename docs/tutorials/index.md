@@ -9,4 +9,4 @@ These tutorials are a guided first look at Essentials. Do them in order: each bu
 | [3. Make your first config change](03-first-config-change.md) | Change the room's behavior by editing its config file, without recompiling anything | 15 min |
 | [4. Add a source without writing code](04-add-a-source.md) | Add a new source device and route it, entirely from config | 25 min |
 
-If you've written SIMPL Windows programs, expect one big shift: in Essentials, **the program is the same for every room**. What makes this room *this room*, including its devices, their connections, the source list and the passwords, is data in a config file. Tutorials 3 and 4 are where that shows.
+If you've written SIMPL Windows programs, expect one big shift: in Essentials, **the program is the same for every room**. What makes this room *this room*, including its devices, their connections, the source list and the passwords, is data in a config file. Tutorials 3 and 4 are where that shows. Each ends with a section showing how to make the same changes by describing them to an AI agent such as GitHub Copilot or Claude, which you can do once you've made them by hand.

@@ -49,3 +49,24 @@ Load the config and run `progreset -p:1`. The display appears on the advanced sh
 
 > [!NOTE]
 > Destination-list keys (`display3`) and device keys (`display-3`) are separate names. Source routes and the destination list use the destination-list key; tie lines and the `tech` settings use the device key.
+
+## Do it with an AI agent
+
+Once you've made the edits by hand, you can describe the same change to an AI agent instead. [Make config changes with an AI agent](use-an-ai-agent.md) covers setting one up and checking its work. To try it with a different display, such as `display-4`, **Lobby Display**, use a prompt that names every place a display appears:
+
+```text
+Add a fourth display called "Lobby Display" (key display-4) to essentialsV3Demo-configurationFile.json, modeled on display-3 and wired the same way. It needs:
+
+1. a mockdisplay device in `devices`;
+2. an output on the matrix-router device, in its outputPorts;
+3. a tie line from that matrix output to the display's hdmiIn1 input;
+4. an entry in destinationLists > default, with the key display4 and the next order number;
+5. a route to display4 added to every source's routeList in sourceLists > default, including roomOff, using each entry's own sourceKey;
+6. display-4 added to the room's tech settings, in `displays` and in systemStatusDeviceKeys.
+
+Change nothing else. Keep the file valid JSON, and list every place you changed.
+```
+
+(If you haven't added `display-3` yet, say "modeled on display-2" instead.)
+
+Review the diff against the six items. The one most often missed is item 5: count the routes, which should be one new route for each entry in the source list. Check that the source routes and the destination list use the destination-list key `display4`, and that the tie line and the `tech` settings use the device key `display-4`. Then load the config and run `progreset -p:1`.

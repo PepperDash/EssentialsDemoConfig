@@ -61,3 +61,23 @@ The UI shows what a device actually supports. Features that the simulated device
 
 - **System Status** shows communication status only for devices that report it. A one-way IR device has no status to report and shows **Device never online**. Remove its key from `tech.systemStatusDeviceKeys` if you'd rather not list it.
 - **Signal dots** follow a source only if the source reports whether it has signal. The simulated sources do; many real ones don't.
+
+## Do it with an AI agent
+
+Once you've made the edits by hand, you can describe the same change to an AI agent instead. [Make config changes with an AI agent](use-an-ai-agent.md) covers setting one up and checking its work.
+
+A real device is where an agent is most likely to go wrong. It has to know the device's type name, its `control` properties and its port names, and a guess looks just as confident as a fact. Give it the source of truth, the plugin's README or the [Essentials configuration docs](https://pepperdash.github.io/Essentials/docs/technical-docs/ConfigurationStructure.html), instead of letting it recall them:
+
+```text
+In essentialsV3Demo-configurationFile.json, replace the simulated source-media device with a real Apple TV controlled by IR from the processor's first IR port, using the IR file Apple_AppleTV_4th_Gen.ir. Keep the device's key, name and every other entry that refers to it.
+
+Take the device type and its properties from the Essentials documentation at https://pepperdash.github.io/Essentials/docs/technical-docs/Supported-Devices.html rather than guessing. Then update the tie line from source-media to the matrix-router so its SourcePort is the Apple TV's real output port name, and tell me which port name you used and where you found it.
+```
+
+Review the diff, then check anything the agent states against its source:
+
+- The device's `type` appears in the list from `gettypes:1`.
+- The tie line's `SourcePort` is a port the device really has. Dev Tools' **Routing** diagram, or `devprops:1 source-media`, shows the device's ports.
+- Copying the IR file to the program's `IR` folder is still your job. An agent editing the config can't do that.
+
+Then load the config and run `progreset -p:1`, and do the checks in step 4.

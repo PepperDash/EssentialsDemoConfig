@@ -55,3 +55,29 @@ If the removed source was the room's `defaultSourceItem`, point `defaultSourceIt
 ## Hide a source without removing it
 
 Set `"includeInSourceList": false` on its source-list entry. The device and its wiring stay in place, so it can still be routed from the tech Routing page.
+
+## Do it with an AI agent
+
+Once you've made the edits by hand, you can describe the same change to an AI agent instead. [Make config changes with an AI agent](use-an-ai-agent.md) covers setting one up and checking its work. These prompts use a Document Camera, `source-doccam`, so they don't collide with the `source-guest` example above.
+
+**Add a source.** Pointing at an existing source to copy is the most reliable way:
+
+```text
+Add a source called "Document Camera" (key source-doccam) to essentialsV3Demo-configurationFile.json, modeled on source-cable. It needs a device, a matrix-router input, a tie line, a source-list entry in sourceLists > default (order 5, routed to display1, display2 and programAudio like source-cable), and an entry in tech.systemStatusDeviceKeys. Change nothing else, and list every place you changed.
+```
+
+Review the diff for the five entries described above, with the same key in each.
+
+**Remove a source:**
+
+```text
+Remove source-doccam from essentialsV3Demo-configurationFile.json: its device, its matrix-router input, its tie line, its source-list entry and its tech.systemStatusDeviceKeys entry. If it was the room's defaultSourceItem, set that to "media" instead. List every place you removed it from.
+```
+
+**Hide a source without removing it:**
+
+```text
+In essentialsV3Demo-configurationFile.json, set includeInSourceList to false on the source-list entry for source-doccam. Change nothing else.
+```
+
+Then load the config and run `progreset -p:1`, as above.
