@@ -7,7 +7,7 @@ Every device in the demo is simulated, but the room doesn't know or care. It tal
 A real device's `type` comes from one of two places:
 
 - **Built into Essentials.** See [supported devices](https://pepperdash.github.io/Essentials/docs/technical-docs/Supported-Devices.html). To list every type the running program can create, run `gettypes:1` in the console.
-- **A plugin.** Most device support lives in plugins, such as the [LG display plugin](https://github.com/PepperDash/epi-display-lg). Each plugin's README gives its type name and properties. Load the plugin's `.cplz` into the program's `plugins` folder (`/user/program1/plugins/` on a 4-series processor), then restart the program.
+- **A plugin.** Most device support lives in plugins, such as the [LG display plugin](https://github.com/PepperDash/epi-display-lg). Each plugin's README gives its type name and properties. Load the plugin's `.cplz` into the program's `plugins` folder (`/user/program1/plugins/` on a 4-series processor, or the room's `User/plugins/` folder on VC-4), then restart the program.
 
 ## 2. Change the device entry
 
@@ -31,7 +31,7 @@ For example, to replace the simulated **Media Player** with an Apple TV controll
 },
 ```
 
-The IR file goes in the program's `IR` folder (`/user/program1/IR/` on a 4-series processor). <!-- TODO(verify): confirm this example on hardware, including the IR file name. -->
+The IR file goes in the program's `IR` folder (`/user/program1/IR/` on a 4-series processor, or the room's `User/IR/` folder on VC-4). <!-- TODO(verify): confirm this example on hardware, including the IR file name. -->
 
 Other connection methods (serial, TCP/IP, SSH) use the same `control` block with different fields. See [the device object](https://pepperdash.github.io/Essentials/docs/technical-docs/ConfigurationStructure.html) in the Essentials configuration docs.
 

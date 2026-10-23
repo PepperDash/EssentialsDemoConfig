@@ -10,7 +10,15 @@ In this tutorial you'll change four things about the room by editing that file, 
 
 The running config file is `essentialsV3Demo-configurationFile.json`. Copy it from the processor to your computer:
 
+# [4-series processor](#tab/4series)
+
 `/user/program1/essentialsV3Demo-configurationFile.json`
+
+# [VC-4](#tab/vc4)
+
+`/opt/crestron/virtualcontrol/RunningPrograms/<room-id>/User/essentialsV3Demo-configurationFile.json`
+
+---
 
 <!-- TODO(verify): confirm where the bundled .cpz places the config. -->
 
@@ -83,11 +91,13 @@ Watch the commas: each entry except the last ends with one. A JSON mistake means
 ## Step 6: Load the changes
 
 1. Copy the file back to the processor, to the same folder, replacing the original.
-2. In the processor console, restart the program:
+2. Restart the program. In the processor console, run:
 
    ```
    progreset -p:1
    ```
+
+   On VC-4, restart the room from the web interface instead.
 
 3. When it has started again, refresh the UI in your browser.
 
