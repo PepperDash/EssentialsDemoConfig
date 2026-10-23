@@ -2,11 +2,13 @@
 
 In this tutorial you'll load the demo onto a processor, open its touchpanel UI in a web browser, and use the room the way a meeting-room user would.
 
-**You'll need:** a 4-series processor, the [demo `.cpz`](https://github.com/PepperDash/EssentialsDemoConfig/raw/main/artifacts/cpz/PepperDashEssentials.3.0.0-rc.16.net8_EssentialsDemoConfig-v1.0.1.cpz), and a browser on the same network.
+**You'll need:** a 4-series processor or VC-4 server, the [demo `.cpz`](https://github.com/PepperDash/EssentialsDemoConfig/raw/main/artifacts/cpz/PepperDashEssentials.3.0.0-rc.19.net8_EssentialsDemoConfig-v1.0.1.cpz), and a browser on the same network.
 
 ## Step 1: Load the program
 
 The `.cpz` contains everything: Essentials, the demo room plugin, the room's config file, the touchpanel app and Essentials Dev Tools. You load it the same way as any other program.
+
+# [4-series processor](#tab/4series)
 
 1. Copy the `.cpz` to the processor's `/program01/` folder. You can use Crestron Toolbox's file manager or any SFTP client.
 2. Open the processor console (SSH, or Toolbox's Text Console) and run:
@@ -27,20 +29,46 @@ devlist:1
 
 You should see a list of devices, including `display-1`, `display-2`, `matrix-router` and `room1`. Each of these was created from an entry in the config file. You'll edit that file in Tutorial 3.
 
+# [VC-4](#tab/vc4)
+
+1. In the VC-4 web interface, add the `.cpz` to the **Program Library**.
+2. Add a room that runs the program, give it a **Room ID** (for example `DEMOV3`), and start it. You'll use the Room ID in addresses below.
+3. The UI is served on port **50002**, and VC-4's firewall blocks it until you open it. On the VC-4 server, run:
+
+   ```
+   sudo firewall-cmd --permanent --add-port=50002/tcp && sudo firewall-cmd --reload
+   ```
+
+   You only need to do this once per server. If you run the demo in more than one room on the same server, give each room its own port in the config's `appServer.directServer.port`, and open that port too.
+
+<!-- TODO(verify): VC-4 web interface menu names. -->
+
+The program takes a minute or two to start. When the room shows as running, you'll check its devices in Dev Tools in the next step. Each one was created from an entry in the config file, which you'll edit in Tutorial 3.
+
+---
+
 ## Step 2: Open Dev Tools
 
 Essentials has its own browser-based developer tools, **Essentials Dev Tools**, and the demo `.cpz` installs them. When Essentials starts, it unpacks them into the processor's own web server. You'll use them to open the UI, and later to watch routing happen.
 
-1. In your browser, go to:
+1. In your browser, go to the address for your platform. On a 4-series processor:
 
    ```
    https://<processor-ip>/cws/debug/
    ```
 
-   The processor uses a self-signed certificate, so your browser shows a security warning the first time. Accept it to continue.
-2. On the **Sign In** page, enter the processor's username and password, the same account you use for SSH or Toolbox, and select **Sign In**.
+   On VC-4, use the room's address:
 
-Dev Tools finds the Essentials programs running on the processor and opens the first one on the **Versions** page. Select **Devices** to see the same devices `devlist` listed in Step 1; selecting one shows its properties and lets you call its methods (see [Inspect and control devices](../how-to/inspect-devices-from-console.md)). The drop-down menu in the top bar shows which program you're looking at: **app01** is the demo in program slot 1. The links along the top bar are the rest of the tools. This tutorial uses **Mobile Control** and **Routing**.
+   ```
+   https://<server>/VirtualControl/Rooms/<room-id>/cws/debug/
+   ```
+
+   Essentials also logs this address at startup, as **Developer Tools Web App available at**. The processor or server uses a self-signed certificate, so your browser shows a security warning the first time. Accept it to continue.
+2. On the **Sign In** page, enter the processor's username and password, the same account you use for SSH or Toolbox (on VC-4, your VC-4 web interface account), and select **Sign In**.
+
+<!-- TODO(verify): which account Dev Tools sign-in accepts on VC-4. -->
+
+Dev Tools finds the Essentials programs running on the processor and opens the first one on the **Versions** page. Select **Devices** to see the program's devices, the same ones `devlist` lists on a 4-series processor, including `display-1`, `display-2`, `matrix-router` and `room1`; selecting one shows its properties and lets you call its methods (see [Inspect and control devices](../how-to/inspect-devices-from-console.md)). The drop-down menu in the top bar shows which program you're looking at: **app01** is the demo in program slot 1. The links along the top bar are the rest of the tools. This tutorial uses **Mobile Control** and **Routing**.
 
 ## Step 3: Open the UI
 
@@ -52,12 +80,14 @@ The touchpanel UI is served by the processor itself, by Essentials' Mobile Contr
 2. The **Direct Server** section shows the Mobile Control server's **User App URL** and **Server Port** (50002), and how many clients are defined and connected.
 3. The **Clients** table has a row for each UI client, with its **Room Key**, **Token** and **URL**. Find a row whose **Room Key** is `room1` and select its **URL**.
 
-The UI opens in a new tab. To open it on another device, right-click the link and copy its address.
+The UI opens in a new tab. On VC-4 its address uses the server's address and port 50002. If the page doesn't load, check that port is open (Step 1). To open it on another device, right-click the link and copy its address.
 
 > [!TIP]
 > To make a new client, select **Add +** above the table, enter `room1` as the **Room Key**, and select **Create**. The new row has its own token and URL.
 
 # [Console](#tab/console)
+
+The `mobilegetclientinfo` command is only available on 4-series processors. On VC-4, use Dev Tools.
 
 1. In the console, run:
 

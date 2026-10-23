@@ -94,7 +94,7 @@ In the room's `tech` settings, add the new device to `systemStatusDeviceKeys`:
 
 ## Step 6: Load and try it
 
-Copy the file to the processor, run `progreset -p:1`, and refresh the UI once the program has restarted. Then:
+Copy the file to the processor, run `progreset -p:1` (on VC-4, restart the room), and refresh the UI once the program has restarted. Then:
 
 1. **Basic sharing:** start the room. **Guest Laptop** is the fifth source tab. Tap it: both displays switch to it.
 2. **Advanced sharing:** turn on **Advanced Sharing**. Guest Laptop is in the source tabs. Route it to just the **Left Display**.

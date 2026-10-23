@@ -35,7 +35,7 @@ You don't need to know where a setting lives. "Make the End Session countdown tw
 1. **Read the diff.** In VS Code, open the changed file's diff from Source Control, or run `git diff`. Every changed line should be one you expected. If the summary lists five places, you should see five.
 2. **Check the JSON.** One missing comma stops the program from reading the file. Your editor shows JSON errors as you type. You can also ask the agent to confirm the file is still valid JSON.
 3. **Check the names match.** A key used in one place has to exist in another: a tie line names real device keys and ports, and a source's routes name real destinations. A source list's keys (`cable`) and a destination list's keys (`display1`) are separate from device keys (`source-cable`, `display-1`).
-4. **Load it and check it in the UI.** Copy the file to the processor and run `progreset -p:1`, then run the checks the tutorial or guide gives for that change. For routing, Dev Tools' **Routing** diagram shows whether the tie lines connect.
+4. **Load it and check it in the UI.** Copy the file to the processor and run `progreset -p:1` (on VC-4, restart the room), then run the checks the tutorial or guide gives for that change. For routing, Dev Tools' **Routing** diagram shows whether the tie lines connect.
 
 If a change is wrong, undo it (`git restore` on the file, or put your copy back), make the prompt more specific, and try again. That's usually quicker than asking the agent to repair its own edit.
 

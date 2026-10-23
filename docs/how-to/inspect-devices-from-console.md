@@ -3,7 +3,7 @@
 Essentials lets you look at and drive devices directly, without the UI. There are two ways to do it, and they do the same things:
 
 - **The processor console.** Open it over SSH or Crestron Toolbox's Text Console. The `:1` on each command below is the program slot.
-- **Essentials Dev Tools**, in a browser. Open `https://<processor-ip>/cws/debug/` and sign in, as in [Tutorial 1](../tutorials/01-run-the-demo.md#step-2-open-dev-tools), then select **Devices** in the top bar. Select a device in the list to open its **Device Detail** page, which has its **Properties**, **Methods** and **Feedbacks**.
+- **Essentials Dev Tools**, in a browser. Open `https://<processor-ip>/cws/debug/` (on VC-4, `https://<server>/VirtualControl/Rooms/<room-id>/cws/debug/`) and sign in, as in [Tutorial 1](../tutorials/01-run-the-demo.md#step-2-open-dev-tools), then select **Devices** in the top bar. Select a device in the list to open its **Device Detail** page, which has its **Properties**, **Methods** and **Feedbacks**.
 
 | Console command | In Dev Tools |
 |---|---|
