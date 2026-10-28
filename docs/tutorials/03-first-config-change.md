@@ -61,13 +61,13 @@ A few lines above, change the End Session countdown from 30 seconds to 10:
 "shutdownPromptSeconds": 10,
 ```
 
-## Step 4: Change the tech PIN
+## Step 4: Rename the room
 
-Inside `tech`, change the password:
+Find the room in `rooms`. Its `name` is shown on the splash screen and in the header. Change it:
 
 ```json
-"tech": {
-  "password": "2468",
+"key": "room1",
+"name": "Huddle Room",
 ```
 
 ## Step 5: Add a lighting scene
@@ -106,7 +106,7 @@ Watch the commas: each entry except the last ends with one. A JSON mistake means
 - **Help:** tap the help icon. You see your new message.
 - **Lighting:** tap the lighting icon. **Presentation** is in the list, between Conference and Default.
 - **Shutdown:** start the room, tap **End Session**, and watch the countdown start from 10 seconds. Tap **Cancel**.
-- **PIN:** hold the audio icon for 3 seconds. **1234** is now **Incorrect**; **2468** opens the tech menu.
+- **Room name:** the splash screen and the header show **Huddle Room**.
 
 > [!TIP]
 > If the program doesn't start or the room is missing, the config file probably has a JSON error. The console shows the error at startup. Fix the file, copy it again and run `progreset -p:1` again.
@@ -123,14 +123,14 @@ You've made four changes by hand, so you know what each one does. You can also d
 
    1. Change the room's help message to "Call the AV team on x5555".
    2. Change shutdownPromptSeconds to 15.
-   3. Change the tech password to 1357.
+   3. Change the room's name to "Training Room".
    4. Add a "Movie" scene, with the id "movie", to the lighting-1 device's scenes, just before the "Default" scene.
 
    Keep the file valid JSON. When you're done, list each line you changed.
    ```
 
 3. **Review what it did.** The agent's list should show four places, and the diff should show the same four. Check that the new scene is in the `scenes` list with commas in the right places, and that no other part of the file changed. [How to check an agent's work](../how-to/use-an-ai-agent.md#check-what-it-did) has the full checklist.
-4. **Load and check it.** Repeat [Step 6](#step-6-load-the-changes), then check the new values: your help message, **Movie** in the lighting list, a 15-second countdown, and **1357** opening the tech menu while **2468** now shows **Incorrect**.
+4. **Load and check it.** Repeat [Step 6](#step-6-load-the-changes), then check the new values: your help message, **Movie** in the lighting list, a 15-second countdown, and **Training Room** in the header.
 
 You don't have to know where a setting lives to ask for it. Try this prompt, which names no keys:
 

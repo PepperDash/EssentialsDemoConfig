@@ -2,7 +2,7 @@
 
 In this tutorial you'll load the demo onto a processor, open its touchpanel UI in a web browser, and use the room the way a meeting-room user would.
 
-**You'll need:** a 4-series processor or VC-4 server, the [demo `.cpz`](https://github.com/PepperDash/EssentialsDemoConfig/raw/main/artifacts/cpz/PepperDashEssentials.3.0.0-rc.19.net8_EssentialsDemoConfig-v1.0.1.cpz), and a browser on the same network.
+**You'll need:** a 4-series processor or VC-4 server, the [demo `.cpz`](https://github.com/PepperDash/EssentialsDemoConfig/raw/main/artifacts/cpz/PepperDashEssentials.3.0.0-rc.20.net8_EssentialsDemoConfig-v1.1.0.cpz), and a browser on the same network.
 
 ## Step 1: Load the program
 
@@ -122,7 +122,7 @@ Tap **Touch Screen to Begin**.
 
 The room turns on and routes its default source, **Laptop**, to both displays. You're now on the room's home screen:
 
-- The **header** shows the room name, the time, and three icons: lighting, help and audio.
+- The **header** shows the room name, the time, and four icons: lighting, help, audio and settings.
 - The **center** shows **Select a source below**, with a row of source tabs.
 - A **volume fader** is on the right.
 - The **footer** shows **Sharing** and **End Session**.
@@ -169,7 +169,8 @@ Turn **Advanced** off again to return to basic sharing.
 
 - **Lighting** (bulb icon): six scenes, from **All On** to **All Off**. Tap one.
 - **Help** (question mark): shows the room's help message.
-- **Audio** (sliders icon): tap briefly to open volume and mute controls for **Program**, **Wireless Mic** and **Lectern Mic**, with the overall **Room** volume on the right. Mute one and its icon turns red and its fader dims.
+- **Audio** (sliders icon): volume and mute controls for **Program**, **Wireless Mic** and **Lectern Mic**, with the overall **Room** volume on the right. Mute one and its icon turns red and its fader dims.
+- **Settings** (gear): switch between the **Default** and **Midnight** themes, pick an accent color, and turn **Light Mode** on or off. Changing the theme reloads the UI. **Technician Controls** opens the technician pages, which you'll explore in [Tutorial 2](02-explore-tech-pages.md).
 
 Tap outside a panel to close it.
 
