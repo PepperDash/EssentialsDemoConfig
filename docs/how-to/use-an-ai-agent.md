@@ -43,7 +43,7 @@ If a change is wrong, undo it (`git restore` on the file, or put your copy back)
 
 - **Invented names.** For real devices, an agent may guess a device type or a property name that doesn't exist. Compare against the plugin's README or the [Essentials configuration docs](https://pepperdash.github.io/Essentials/docs/technical-docs/ConfigurationStructure.html), and give the agent that page if it can read links.
 - **Wrong port names.** Different device types name their ports differently. If a tie line names a port the device doesn't have, Essentials logs an error at startup and routes through it don't work. See [Replace a simulated device with a real one](replace-mock-with-real-device.md).
-- **Secrets.** The demo's tech PIN is public. On a real project, keep real PINs, passwords and customer details out of prompts and out of any file you share, and follow your organization's policy on AI tools.
+- **Secrets.** The demo's config has nothing secret in it. On a real project, keep real PINs, passwords and customer details out of prompts and out of any file you share, and follow your organization's policy on AI tools.
 - **Keep the processor out of it.** You don't need to give an agent processor credentials for any of this. Loading the file and restarting the program stay with you.
 
 ## Optional: give the agent standing instructions

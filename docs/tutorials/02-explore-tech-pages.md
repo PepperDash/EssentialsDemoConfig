@@ -1,15 +1,15 @@
 # Tutorial 2: Explore the technician pages
 
-The demo has a PIN-protected technician menu, the kind of tools an installer or support tech uses. In this tutorial you'll unlock it and see live device status, display control and matrix routing, all driven by the same devices the room uses.
+The demo has a technician menu, the kind of tools an installer or support tech uses. In this tutorial you'll open it and see live device status, display control and routing, all driven by the same devices the room uses.
 
 **Before you start:** complete [Tutorial 1](01-run-the-demo.md) and have the UI open, with the room on.
 
-## Step 1: Unlock the tech menu
+## Step 1: Open the tech menu
 
-1. **Press and hold** the audio icon (sliders) in the header for **3 seconds**.
-2. **Enter Access Code** appears, with a keypad. Enter **1234**.
+1. Tap the settings icon (gear) in the header.
+2. Tap **Technician Controls**.
 
-The keypad clears and flashes **Incorrect** if the code is wrong. The code comes from the room's config file (`tech.password`); you'll change it in [Tutorial 3](03-first-config-change.md).
+On a real installation the tech pages would usually be locked away from room users. The demo opens them directly, so you can explore.
 
 You're now in the tech menu. The navigation on the left has **System Status**, **Displays**, **Routing**, **Volume** and **About**. **Exit Technician Controls** at the top right takes you back to the room.
 
@@ -33,9 +33,9 @@ The simulated display has real warm-up and cool-down timers, so the UI is showin
 
 ## Step 4: Routing
 
-The Routing page is a classic matrix-switcher tie screen for the room's matrix router:
+The Routing page has two modes, chosen at the top: **Matrix**, a tie screen for the room's matrix router, and **Graph**, a diagram of every routing device in the system. The page remembers the mode you last used. Start with **Matrix**:
 
-- Across the top: the signal type to route, **Audio**, **Video** or **Audio & Video**.
+- Below the mode buttons: the signal type to route, **Audio**, **Video** or **Audio & Video**.
 - **Inputs:** the four sources, each with a signal dot, plus **None**.
 - **Outputs:** **Left Display**, **Right Display** and **Program Audio**. Each shows its current audio (**A:**) and video (**V:**) input.
 
@@ -57,9 +57,26 @@ Back in the first tab, the **Right Display** output now shows Wireless Presentat
 
 It works the other way too. Routes you make *on the tech Routing page* switch the matrix directly, like a technician using the switcher's own front panel. Essentials notices the matrix change, works out which source now reaches each display, and updates that display's current source. So the room's destination cards follow within about half a second.
 
+### Graph mode
+
+Tap **Graph**. Instead of one matrix, you see every routing device and the tie lines between them: the four sources on the left, the **Matrix Router** in the middle, and the displays and program audio on the right. Curves inside the Matrix Router show its current routes. Drag to pan and pinch to zoom.
+
+**Hide unconnected**, on by default, hides devices and ports with no tie lines, such as the displays' unused inputs.
+
+Make a route:
+
+1. On the **Left Display**, tap its input port, **hdmiIn1**. A panel lists every source that can reach that port. A **✓** marks the current one.
+2. Choose **Video**, then **Media Player**.
+
+The port shows a pulsing dot until the processor confirms the route. Then the curve inside the Matrix Router moves to the new input. You named only a source and a destination, and Essentials found the path through the matrix from the tie lines.
+
+You can also switch the matrix itself: tap one of the Matrix Router's outputs, such as **display-1**, and pick an input. To clear a route, choose **None — clear route**.
+
+Tap a device to highlight the signal paths through it, and tap it again to clear the highlight. Switch back to **Matrix**, and the Left Display output shows the route you just made: both modes switch the same matrix.
+
 ### Route from Dev Tools
 
-Essentials Dev Tools can make routes too, from its **Routing** diagram. Open Dev Tools as in [Tutorial 1](01-run-the-demo.md#step-2-open-dev-tools) and select **Routing**. Keep a UI tab on the tech Routing page and another on **Advanced Sharing** so you can watch both.
+Essentials Dev Tools has the same diagram as Graph mode, on a computer: its **Routing** page. Open Dev Tools as in [Tutorial 1](01-run-the-demo.md#step-2-open-dev-tools) and select **Routing**. Keep a UI tab on the tech Routing page and another on **Advanced Sharing** so you can watch both.
 
 1. In the diagram, find the **Left Display** box and select its input port, **hdmiIn1**. A small panel opens, listing every source that can reach that port. A **✓** marks the current one.
 2. Select **Cable TV**.
@@ -87,7 +104,8 @@ Tap **Exit Technician Controls** to go back to the room.
 ## What you've learned
 
 - The tech pages show live state from the same devices the room uses: communication status, warm-up and cool-down, matrix crosspoints and sensor readings.
-- Routes made from the room screens, the tech Routing page or Dev Tools all switch the same devices, so every view stays in sync.
-- Everything on these pages is configured, not hard-coded: which devices appear on System Status, which displays are listed, which matrix is routed, and the PIN are all set in the room's config.
+- Routes made from the room screens, either mode of the tech Routing page, or Dev Tools all switch the same devices, so every view stays in sync.
+- Graph mode draws the system from its tie lines, so it shows whatever the config wires together.
+- Everything on these pages is configured, not hard-coded: which devices appear on System Status, which displays are listed and which matrix is routed are all set in the room's config.
 
 **Next:** [Tutorial 3: Make your first config change](03-first-config-change.md)
