@@ -11,6 +11,7 @@ Start with [Tutorial 1: Run the demo](https://pepperdash.github.io/EssentialsDem
 - `essentialsV3Demo-configurationFile.json`: the config file that defines the demo room and its devices.
 - `docs/`: the documentation site ([docfx](https://dotnet.github.io/docfx/)), published to GitHub Pages on each push to `main`.
 - `artifacts/cpz/`: the demo program, a single `.cpz` that holds the latest build.
+- `artifacts/ch5z/`: the Mobile Control touchpanel wrapper app, the `.ch5z` a TSW panel needs to run the UI. Its download link is in [docs/how-to/run-the-ui-on-a-tsw-panel.md](docs/how-to/run-the-ui-on-a-tsw-panel.md); update it by hand when you add a new version.
 - `scripts/update-cpz-links.mjs`: points the docs' download links at that `.cpz` (see below).
 - [`docs/media/essentials-3-frameworks-update.pdf`](docs/media/essentials-3-frameworks-update.pdf): overview slides on what's new in Essentials 3.0 and Dev Tools 1.6.
 

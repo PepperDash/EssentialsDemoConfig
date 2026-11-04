@@ -18,3 +18,5 @@
     href: inspect-devices-from-console.md
   - name: Load updates onto the processor
     href: load-updates.md
+  - name: Run the UI on a TSW panel
+    href: run-the-ui-on-a-tsw-panel.md

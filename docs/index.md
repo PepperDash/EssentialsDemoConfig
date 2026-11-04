@@ -35,7 +35,7 @@ Nothing needs to be wired up. Once you've seen it run, you can change it: the ro
 - A web browser on the same network as the processor or server.
 - An SSH client or Crestron Toolbox, for the processor console. On VC-4 you use its web interface and Essentials Dev Tools instead.
 
-You don't need a touchpanel, displays or any other hardware.
+You don't need a touchpanel, displays or any other hardware. To run the UI on a Crestron TSW panel as well, see [Run the UI on a TSW panel](how-to/run-the-ui-on-a-tsw-panel.md).
 
 ## What's in the demo
 

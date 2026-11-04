@@ -14,3 +14,4 @@ Short, task-focused guides for changing and working with the demo. They assume y
 
 - [Inspect and control devices](inspect-devices-from-console.md)
 - [Load updates onto the processor](load-updates.md)
+- [Run the UI on a TSW panel](run-the-ui-on-a-tsw-panel.md)

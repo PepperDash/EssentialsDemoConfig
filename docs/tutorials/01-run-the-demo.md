@@ -114,7 +114,7 @@ The `mobilegetclientinfo` command is only available on 4-series processors. On V
 After a moment of "syncing", you'll see the **Demo Room** splash screen, with the PepperDash logo and **Touch Screen to Begin**.
 
 > [!TIP]
-> Size the browser window to a touchpanel's landscape shape (roughly 16:10) for the intended layout.
+> Size the browser window to a touchpanel's landscape shape (roughly 16:10) for the intended layout. To run the UI on a real Crestron TSW panel, see [Run the UI on a TSW panel](../how-to/run-the-ui-on-a-tsw-panel.md).
 
 ## Step 4: Start the room
 
