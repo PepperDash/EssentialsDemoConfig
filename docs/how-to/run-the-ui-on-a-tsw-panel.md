@@ -12,6 +12,8 @@ The wrapper only hosts the UI, so updating the demo or its UI doesn't mean reloa
 
 ## Step 1: Load the wrapper app onto the panel
 
+On VC-4, first add the `.ch5z` to the demo's **Program Library** entry in the VC-4 web interface, as the program's touch panel project (see [Tutorial 1](../tutorials/01-run-the-demo.md), Step 1). Then load it onto the panel:
+
 1. Copy the `.ch5z` to the panel's `/display/` folder, using Crestron Toolbox's file manager or any SFTP client. Sign in with the panel's admin account.
 2. Open the panel's console (SSH, or Toolbox's Text Console) and run:
 
