@@ -2,7 +2,7 @@
 
 In this tutorial you'll load the demo onto a processor, open its touchpanel UI in a web browser, and use the room the way a meeting-room user would.
 
-**You'll need:** a 4-series processor or VC-4 server, the [demo `.cpz`](https://github.com/PepperDash/EssentialsDemoConfig/raw/main/artifacts/cpz/PepperDashEssentials.3.0.0-rc.20.net8_EssentialsDemoConfig-v1.1.0.cpz), and a browser on the same network.
+**You'll need:** a 4-series processor or VC-4 server, the [demo `.cpz`](https://github.com/PepperDash/EssentialsDemoConfig/raw/main/artifacts/cpz/PepperDashEssentials.3.0.0-rc.20.net8_EssentialsDemoConfig-v1.1.0.cpz), and a browser on the same network. To also run the UI on a Crestron TSW panel, you'll need the [touchpanel wrapper app `.ch5z`](https://github.com/PepperDash/EssentialsDemoConfig/raw/main/artifacts/ch5z/Mobile-Control-Touchpanel-Wrapper-App-1.3.0.ch5z) (about 320 KB).
 
 ## Step 1: Load the program
 
@@ -32,6 +32,7 @@ You should see a list of devices, including `display-1`, `display-2`, `matrix-ro
 # [VC-4](#tab/vc4)
 
 1. In the VC-4 web interface, add the `.cpz` to the **Program Library**.
+   If you'll use a TSW panel, add the wrapper app `.ch5z` to the same Program Library entry as its touch panel project.
 2. Add a room that runs the program, give it a **Room ID** (for example `DEMOV3`), and start it. You'll use the Room ID in addresses below.
 3. The UI is served on port **50002**, and VC-4's firewall blocks it until you open it. On the VC-4 server, run:
 
@@ -41,7 +42,7 @@ You should see a list of devices, including `display-1`, `display-2`, `matrix-ro
 
    You only need to do this once per server. If you run the demo in more than one room on the same server, give each room its own port in the config's `appServer.directServer.port`, and open that port too.
 
-<!-- TODO(verify): VC-4 web interface menu names. -->
+<!-- TODO(verify): VC-4 web interface menu names, and the Program Library field the .ch5z goes in. -->
 
 The program takes a minute or two to start. When the room shows as running, you'll check its devices in Dev Tools in the next step. Each one was created from an entry in the config file, which you'll edit in Tutorial 3.
 
