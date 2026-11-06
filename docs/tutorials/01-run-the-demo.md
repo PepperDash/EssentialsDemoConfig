@@ -2,7 +2,7 @@
 
 In this tutorial you'll load the demo onto a processor, open its touchpanel UI in a web browser, and use the room the way a meeting-room user would.
 
-**You'll need:** a 4-series processor or VC-4 server, the [demo `.cpz`](https://github.com/PepperDash/EssentialsDemoConfig/raw/main/artifacts/cpz/PepperDashEssentials.3.0.0-rc.20.net8_EssentialsDemoConfig-v1.2.0.cpz), and a browser on the same network. To also run the UI on a Crestron TSW panel, you'll need the [touchpanel wrapper app `.ch5z`](https://github.com/PepperDash/EssentialsDemoConfig/raw/main/artifacts/ch5z/Mobile-Control-Touchpanel-Wrapper-App-1.3.0.ch5z) (about 320 KB).
+**You'll need:** a 4-series processor or VC-4 server, the [demo `.cpz`](https://github.com/PepperDash/EssentialsDemoConfig/raw/main/artifacts/cpz/PepperDashEssentials.3.0.0-rc.25.net8_EssentialsDemoConfig-v1.2.0.cpz), and a browser on the same network. To also run the UI on a Crestron TSW panel, you'll need the [touchpanel wrapper app `.ch5z`](https://github.com/PepperDash/EssentialsDemoConfig/raw/main/artifacts/ch5z/Mobile-Control-Touchpanel-Wrapper-App-1.3.0.ch5z) (about 320 KB).
 
 ## Step 1: Load the program
 
@@ -169,9 +169,9 @@ Turn **Advanced** off again to return to basic sharing.
 ## Step 7: Try the header controls
 
 - **Lighting** (bulb icon): six scenes, from **All On** to **All Off**. Tap one.
-- **Help** (question mark): shows the room's help message. **Take the tour** steps through each part of the room screen, highlighting it and explaining what it does. Tap **Skip** to leave the tour at any time.
+- **Help** (question mark): shows the room's help message. **Take the tour** steps through each part of the room screen, highlighting it and explaining what it does. Tap **Skip** to leave the tour at any time. The footer also has a **Take the tour** button on its left until someone takes the tour; it comes back when the room shuts down or nobody has touched the panel for 5 minutes.
 - **Audio** (sliders icon): volume and mute controls for **Program**, **Wireless Mic** and **Lectern Mic**, with the overall **Room** volume on the right. Mute one and its icon turns red and its fader dims.
-- **Settings** (gear): switch between the **Default** and **Midnight** themes, pick an accent color, and turn **Light Mode** on or off. Changing the theme reloads the UI. **Technician Controls** opens the technician pages, which you'll explore in [Tutorial 2](02-explore-tech-pages.md).
+- **Settings** (gear): switch between the **Default** and **Midnight** themes, pick an accent color, and turn **Light Mode** on or off. Changing the theme reloads the UI. The panel starts on Midnight, and goes back to it after 5 minutes with nobody touching the panel, so the next person sees the same theme. **Technician Controls** opens the technician pages, which you'll explore in [Tutorial 2](02-explore-tech-pages.md).
 
 Tap outside a panel to close it.
 
