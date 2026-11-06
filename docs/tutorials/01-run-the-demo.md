@@ -2,7 +2,7 @@
 
 In this tutorial you'll load the demo onto a processor, open its touchpanel UI in a web browser, and use the room the way a meeting-room user would.
 
-**You'll need:** a 4-series processor or VC-4 server, the [demo `.cpz`](https://github.com/PepperDash/EssentialsDemoConfig/raw/main/artifacts/cpz/PepperDashEssentials.3.0.0-rc.25.net8_EssentialsDemoConfig-v1.2.0.cpz), and a browser on the same network. To also run the UI on a Crestron TSW panel, you'll need the [touchpanel wrapper app `.ch5z`](https://github.com/PepperDash/EssentialsDemoConfig/raw/main/artifacts/ch5z/Mobile-Control-Touchpanel-Wrapper-App-1.3.0.ch5z) (about 320 KB).
+**You'll need:** a 4-series processor or VC-4 server, the [demo `.cpz`](https://github.com/PepperDash/EssentialsDemoConfig/raw/main/artifacts/cpz/PepperDashEssentials.3.0.0-rc.25.net8_EssentialsDemoConfig-v1.3.0.cpz), and a browser on the same network. To also run the UI on a Crestron TSW panel, you'll need the [touchpanel wrapper app `.ch5z`](https://github.com/PepperDash/EssentialsDemoConfig/raw/main/artifacts/ch5z/Mobile-Control-Touchpanel-Wrapper-App-1.3.0.ch5z) (about 320 KB).
 
 ## Step 1: Load the program
 
